@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'Bogdanp/molokai.vim'
 Plugin 'Bogdanp/quicksilver.vim'
 
 call vundle#end()
@@ -51,7 +50,6 @@ set autoindent
 
 " UI
 syntax on                               " Enable syntax highlighting
-colo molokai
 
 set backspace=indent,eol,start          " Backspace over everything
 set cursorline                          " Highlight current line
