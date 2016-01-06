@@ -34,6 +34,12 @@ alias e="open -a Emacs"
 alias ec="emacsclient -n"
 
 
+# Emacs
+function magit
+        env PWD=(pwd) emacsclient -e "(magit-status \"$PWD\")"
+end
+
+
 # Private
 source $HOME/.config/fish/private.fish; or true
 
