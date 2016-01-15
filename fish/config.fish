@@ -11,6 +11,7 @@ set -xg PATH $HOME/.local/bin $HOME/.rvm/bin $GHC_PATH $TEX_PATH $PATH
 set -xg PATH $PATH /usr/local/share/npm/bin
 set -xg PATH $PATH /usr/local/google-cloud-sdk/bin
 set -xg PATH $PATH $HOME/bin
+set -xg PATH $PATH /usr/local/Cellar/rakudo-star/2015.12/share/perl6/site/bin/
 set -xg MANPATH /usr/share/man /usr/local/share/man /opt/X11/share/man /usr/local/MacGPG2/share/man /Library/TeX/Distributions/.DefaultTeX/Contents/Man
 
 # Env
