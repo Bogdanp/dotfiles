@@ -55,6 +55,8 @@ set backspace=indent,eol,start          " Backspace over everything
 set cursorline                          " Highlight current line
 set cursorcolumn                        " Highlight current column
 set colorcolumn=100                     " Highlight the 100th column in a window
+set guifont=inconsolata:h14
+set guioptions=
 set hidden                              " Allow switching buffers without saving
 set ruler                               " Show the cursor position all the time
 set scrolloff=3                         " Top and bottom padding when scrolling
@@ -88,7 +90,7 @@ let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " Bindings
-" zz is a stupid binding for this 
+" zz is a stupid binding for this
 nnoremap <C-l> zz
 
 " Enhance buffer switching
