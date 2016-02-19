@@ -38,6 +38,10 @@ alias ec="emacsclient -n"
 alias w=workon
 
 
+# Fish
+set fish_greeting
+
+
 # Emacs
 function magit
         env PWD=(pwd) emacsclient -e "(magit-status \"$PWD\")"
