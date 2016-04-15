@@ -1,3 +1,8 @@
+# Fisherman
+set fisher_home ~/.local/share/fisherman
+set fisher_config ~/.config/fisherman
+source $fisher_home/config.fish
+
 # Locale
 set -xg LC_ALL en_US.UTF-8
 set -xg LANG en_US.UTF-8
