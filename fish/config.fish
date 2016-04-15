@@ -58,3 +58,7 @@ source $HOME/.opam/opam-init/init.fish; or true
 
 # Python
 eval (python -m virtualfish)
+
+
+# RVM
+rvm default
