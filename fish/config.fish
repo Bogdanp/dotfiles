@@ -13,7 +13,7 @@ set -xg TEX_PATH /usr/local/texlive/2015/bin/x86_64-darwin
 
 set -xg GOGAE /usr/local/opt/go_appengine
 set -xg GOROOT /usr/local/opt/go/libexec
-set -xg GOPATH /usr/local/opt/go/vendor
+set -xg GOPATH $HOME/sandbox/gopath
 
 set -xg PATH /usr/local/sbin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
 set -xg PATH $HOME/.local/bin $HOME/.rvm/bin $GHC_PATH $TEX_PATH $PATH
