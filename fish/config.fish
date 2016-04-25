@@ -51,12 +51,6 @@ alias w=workon
 set fish_greeting
 
 
-# Emacs
-function magit
-        env PWD=(pwd) emacsclient -e "(magit-status \"$PWD\")"
-end
-
-
 # Private
 source $HOME/.config/fish/private.fish; or true
 
