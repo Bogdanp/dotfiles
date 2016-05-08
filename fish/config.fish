@@ -42,8 +42,6 @@ set -xg DOCKER_MACHINE_NAME dinghy
 
 
 # Aliases
-alias vi=vim
-alias e="open -a Emacs"
 alias ec="emacsclient -n"
 alias w=workon
 
