@@ -88,6 +88,8 @@ let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " Bindings
+nnoremap / /\v
+
 " zz is a stupid binding for this
 nnoremap <C-l> zz
 
