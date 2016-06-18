@@ -5,6 +5,9 @@ function workon
                 if test -d "$HOME/sandbox/$PROJECT";
                         cd "$HOME/sandbox/$PROJECT";
 
+                else if test -d "$HOME/sandbox/gopath/src/$PROJECT";
+                        cd "$HOME/sandbox/gopath/src/$PROJECT";
+
                 else if test -d "$HOME/work/$PROJECT";
                         cd "$HOME/Work/$PROJECT";
 
