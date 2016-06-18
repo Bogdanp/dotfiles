@@ -52,9 +52,7 @@ set autoindent
 syntax on                               " Enable syntax highlighting
 
 set backspace=indent,eol,start          " Backspace over everything
-set cursorline                          " Highlight current line
-set cursorcolumn                        " Highlight current column
-set colorcolumn=100                     " Highlight the 100th column in a window
+set colorcolumn=120                     " Highlight the 120th column in a window
 set guifont=inconsolata:h14
 set guioptions=
 set hidden                              " Allow switching buffers without saving
