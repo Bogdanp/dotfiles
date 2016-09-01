@@ -8,6 +8,12 @@ function workon
                 else if test -d "$HOME/sandbox/gopath/src/$PROJECT";
                         cd "$HOME/sandbox/gopath/src/$PROJECT";
 
+                else if test -d "$HOME/sandbox/gopath/src/github.com/Bogdanp/$PROJECT";
+                        cd "$HOME/sandbox/gopath/src/github.com/Bogdanp/$PROJECT";
+
+                else if test -d "$HOME/sandbox/gopath/src/github.com/LeadPages/$PROJECT";
+                        cd "$HOME/sandbox/gopath/src/github.com/LeadPages/$PROJECT";
+
                 else if test -d "$HOME/work/$PROJECT";
                         cd "$HOME/Work/$PROJECT";
 
