@@ -89,6 +89,7 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " Bindings
 nnoremap / /\v
+vnoremap / /\v
 
 " zz is a stupid binding for this
 nnoremap <C-l> zz
