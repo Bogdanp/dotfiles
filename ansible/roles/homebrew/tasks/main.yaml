@@ -12,7 +12,6 @@
   with_items:
     - ack
     - cloc
-    - ctags
     - curl
     - emacs-mac
     - fish
