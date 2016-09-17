@@ -1,0 +1,19 @@
+---
+- name: install golang packages
+  homebrew: >
+    name={{item}}
+    state=present
+  with_items:
+    - go
+
+- name: setup golang paths
+  file: path={{sandbox_path}}{{item}} state=directory
+  with_items:
+    - /gopath/bin
+    - /gopath/pkg
+    - /gopath/src
+
+- name: get golang libraries
+  shell: go get -u {{item}}
+  with_items:
+    - golang.org/x/tools/cmd/...

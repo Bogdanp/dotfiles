@@ -1,0 +1,9 @@
+---
+- name: install node packages
+  homebrew: >
+    name={{item}}
+    state=present
+  with_items:
+    - libsass
+    - node
+    - phantomjs

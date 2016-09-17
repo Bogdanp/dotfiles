@@ -1,0 +1,48 @@
+---
+- name: configure git
+  git_config: >
+    name={{item.name}}
+    value={{item.value}}
+    scope=global
+  with_items:
+    - {name: "user.name", value: "Bogdan Popa"}
+    - {name: "user.email", value: "popa.bogdanp@gmail.com"}
+    - {name: "core.editor", value: "emacsclient"}
+
+- name: make Fish the default shell
+  user: >
+    name=bogdan
+    shell=/usr/local/bin/fish
+
+- name: clone dotfiles repo
+  shell: >
+    if [ ! -d {{sandbox_path}}/dotfiles ]; then
+      git clone git@github.com:Bogdanp/dotfiles.git {{sandbox_path}}/dotfiles
+    fi
+
+- name: clone .emacs.d repo
+  shell: >
+    if [ ! -d ~/.emacs.d ]; then
+      git clone git@github.com:Bogdanp/.emacs.d.git ~/.emacs.d
+      cd ~/.emacs.d && git submodule update --init
+    fi
+
+- name: link dotfiles
+  file: >-
+    src={{sandbox_path}}/dotfiles{{item.src}}
+    dest={{item.dest}}
+    state=link
+  with_items:
+    - {src: "/fish/config.fish", dest: "~/.config/fish/config.fish"}
+    - {src: "/fish/functions/fish_prompt.fish", dest: "~/.config/fish/functions/fish_prompt.fish"}
+    - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
+    - {src: "/psqlrc", dest: "~/.psqlrc"}
+    - {src: "/pythonrc.py", dest: "~/.pythonrc.py"}
+    - {src: "/vimrc", dest: "~/.vimrc"}
+
+- name: install fish plugins
+  shell: fisher install {{item}}; or true
+  args:
+    executable: /usr/local/bin/fish
+  with_items:
+    - bass

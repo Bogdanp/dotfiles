@@ -1,0 +1,28 @@
+---
+- name: install python packages
+  homebrew: >
+    name={{item}}
+    state=present
+  with_items:
+    - python
+    - python3
+
+- name: install python libraries
+  pip: >
+    name={{item}}
+    state=present
+    extra_args=-U
+  with_items:
+    - autopep8
+    - flake8
+    - importmagic
+    - jedi
+    - offlineimap
+    - pip
+    - pytest
+    - pytest-cov
+    - pytest-xdist
+    - pytest-pythonpath
+    - rope
+    - virtualenv
+    - virtualfish

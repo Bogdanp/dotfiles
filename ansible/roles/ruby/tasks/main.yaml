@@ -1,0 +1,7 @@
+---
+- name: install ruby packages
+  homebrew: >
+    name={{item}}
+    state=present
+  with_items:
+    - ruby

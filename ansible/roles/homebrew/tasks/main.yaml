@@ -1,0 +1,29 @@
+---
+- name: add homebrew taps
+  homebrew_tap: >
+    name={{item}}
+  with_items:
+    - railwaycat/emacsmacport
+
+- name: install homebrew packages
+  homebrew: >
+    name={{item}}
+    state=present
+  with_items:
+    - ack
+    - cloc
+    - ctags
+    - curl
+    - emacs-mac
+    - fish
+    - fisherman
+    - git
+    - graphviz
+    - jq
+    - macvim
+    - memcached
+    - notmuch
+    - readline
+    - terminal-notifier
+    - the_silver_searcher
+    - tmux
