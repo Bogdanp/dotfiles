@@ -1,0 +1,15 @@
+---
+- name: install ghc packages
+  homebrew:
+    name={{item}} state=present
+  with_items:
+    - ghc
+
+- name: install or upgrade stack
+  shell: >-
+    if [ ! $(command -v stack 2> /dev/null) ]; then
+      curl -sSL https://get.haskellstack.org/ | sh
+    fi
+
+- name: configure stack
+  copy: src=stack-global.yaml dest=~/.stack/global/stack.yaml
