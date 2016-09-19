@@ -38,6 +38,7 @@
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
     - {src: "/psqlrc", dest: "~/.psqlrc"}
     - {src: "/pythonrc.py", dest: "~/.pythonrc.py"}
+    - {src: "/tmux", dest: "~/.tmux"}
     - {src: "/tmux.conf", dest: "~/.tmux.conf"}
     - {src: "/vimrc", dest: "~/.vimrc"}
 
