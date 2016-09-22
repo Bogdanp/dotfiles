@@ -12,7 +12,6 @@
     - google-chrome
     - iterm2
     - kaleidoscope
-    - karabiner
     - keka
     - moom
     - little-snitch
@@ -22,3 +21,8 @@
     - spotify
     - transmission
     - vlc
+
+- name: setup karabiner-elements config
+  copy: >-
+    src=karabiner.json
+    dest=~/.karabiner.d/configuration/karabiner.json
