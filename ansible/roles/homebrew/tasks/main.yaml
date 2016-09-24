@@ -27,3 +27,8 @@
     - terminal-notifier
     - the_silver_searcher
     - tmux
+
+- name: install reattach-to-user-namespace
+  homebrew: >-
+    name=reattach-to-user-namespace
+    install_options=wrap-pbcopy-and-pbpaste
