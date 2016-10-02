@@ -3,7 +3,6 @@ set -xg LC_ALL en_US.UTF-8
 set -xg LANG en_US.UTF-8
 
 # Path
-set -xg GHC_PATH /Applications/ghc-7.10.2.app/Contents/bin
 set -xg TEX_PATH /usr/local/texlive/2015/bin/x86_64-darwin
 
 set -xg GOGAE /usr/local/opt/go_appengine
@@ -11,7 +10,7 @@ set -xg GOROOT /usr/local/opt/go/libexec
 set -xg GOPATH $HOME/sandbox/gopath
 
 set -xg PATH /usr/local/sbin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
-set -xg PATH $HOME/.local/bin $HOME/.rvm/bin $GHC_PATH $TEX_PATH $PATH
+set -xg PATH $HOME/.local/bin $HOME/.rvm/bin $TEX_PATH $PATH
 set -xg PATH $PATH /usr/local/share/npm/bin
 set -xg PATH $PATH /usr/local/google-cloud-sdk/bin
 set -xg PATH $PATH $HOME/bin
