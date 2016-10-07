@@ -18,11 +18,11 @@
     - fisherman
     - git
     - graphviz
-    - hub
     - jq
     - macvim
     - memcached
     - notmuch
+    - postgresql
     - readline
     - terminal-notifier
     - the_silver_searcher
