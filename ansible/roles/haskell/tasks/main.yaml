@@ -12,9 +12,8 @@
     fi
 
 - name: configure stack
-  file: >-
+  copy: >-
     src={{item.src}} dest={{item.dest}}
-    state=link force=yes
   with_items:
     - {src: "stack-global.yaml", dest: "~/.stack/global/stack.yaml"}
     - {src: "config.yaml", dest: "~/.stack/config.yaml"}
