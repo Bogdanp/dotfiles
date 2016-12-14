@@ -50,3 +50,4 @@
     executable: /usr/local/bin/fish
   with_items:
     - bass
+    - fzf
