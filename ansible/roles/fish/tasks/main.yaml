@@ -34,6 +34,7 @@
     state=link
   with_items:
     - {src: "/fish/config.fish", dest: "~/.config/fish/config.fish"}
+    - {src: "/fish/functions/ec.fish", dest: "~/.config/fish/functions/ec.fish"}
     - {src: "/fish/functions/fish_prompt.fish", dest: "~/.config/fish/functions/fish_prompt.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
     - {src: "/guile.scm", dest: "~/.guile"}
