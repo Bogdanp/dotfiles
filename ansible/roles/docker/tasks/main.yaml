@@ -12,20 +12,6 @@
     name={{item}}
     state=present
   with_items:
-    - xhyve
     - docker
     - docker-machine
-    - docker-machine-driver-xhyve
     - dinghy
-
-- name: configure {docker-machine-driver,}xhyve permissions
-  become: true
-  become_user: root
-  file: >
-    path={{brew_prefix.stdout}}/opt/{{item}}/bin/{{item}}
-    owner=root
-    group=wheel
-    mode=u+s
-  with_items:
-    - xhyve
-    - docker-machine-driver-xhyve
