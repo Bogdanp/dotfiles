@@ -1,9 +1,9 @@
 ---
-- name: install or upgrade stack
-  shell: >-
-    if [ ! $(command -v stack 2> /dev/null) ]; then
-      curl -sSL https://get.haskellstack.org/ | sh
-    fi
+- name: install stack
+  homebrew:
+    name={{item}} state=present
+  with_items:
+    - haskell-stack
 
 - name: configure stack
   copy: >-
