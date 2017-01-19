@@ -23,7 +23,9 @@
     - memcached
     - notmuch
     - postgresql
+    - protobuf
     - readline
+    - sbcl
     - terminal-notifier
     - the_silver_searcher
     - tmux
