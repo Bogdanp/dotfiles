@@ -25,6 +25,7 @@
     - postgresql
     - protobuf
     - readline
+    - rlwrap
     - sbcl
     - terminal-notifier
     - the_silver_searcher
