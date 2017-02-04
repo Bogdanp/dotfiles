@@ -3,6 +3,7 @@
   homebrew_tap: >
     name={{item}}
   with_items:
+    - fisherman/tap
     - railwaycat/emacsmacport
 
 - name: install homebrew packages

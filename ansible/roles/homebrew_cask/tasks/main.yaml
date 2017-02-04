@@ -12,6 +12,7 @@
     - google-chrome
     - iterm2
     - keka
+    - mactex
     - moom
     - screenflow
     - skype
@@ -20,6 +21,11 @@
     - transmission
     - virtualbox
     - vlc
+
+- name: ensure karabiner-elements config dir exists
+  file: >-
+    path=~/.karabiner.d/configuration
+    state=directory
 
 - name: setup karabiner-elements config
   copy: >-

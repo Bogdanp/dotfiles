@@ -12,7 +12,7 @@ set -xg GOPATH $HOME/sandbox/gopath
 set -xg PATH /usr/local/sbin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
 set -xg PATH $HOME/.local/bin $HOME/.rvm/bin $TEX_PATH $PATH
 set -xg PATH $PATH /usr/local/share/npm/bin
-set -xg PATH $PATH /usr/local/google-cloud-sdk/bin
+set -xg PATH $PATH $HOME/sandbox/google-cloud-sdk/bin
 set -xg PATH $PATH $HOME/bin
 set -xg PATH $PATH $HOME/.cargo/bin
 set -xg PATH $PATH $GOROOT/bin $GOPATH/bin $GOGAE
@@ -42,14 +42,6 @@ alias w=workon
 
 # Fish
 set fish_greeting
-
-
-# Private
-source $HOME/.config/fish/private.fish; or true
-
-
-# Ocaml
-source $HOME/.opam/opam-init/init.fish; or true
 
 
 # Python

@@ -9,10 +9,10 @@
     - {name: "user.email", value: "popa.bogdanp@gmail.com"}
     - {name: "core.editor", value: "emacsclient"}
 
-- name: make Fish the default shell
-  user: >
-    name=bogdan
-    shell=/usr/local/bin/fish
+# - name: make Fish the default shell
+#   user: >
+#     name=bogdan
+#     shell=/usr/local/bin/fish
 
 - name: clone dotfiles repo
   shell: >
@@ -26,6 +26,12 @@
       git clone git@github.com:Bogdanp/.emacs.d.git ~/.emacs.d
       cd ~/.emacs.d && git submodule update --init
     fi
+
+- name: ensure fish directories exist
+  file: >-
+    path=~/.config/fish/functions
+    state=directory
+    recurse=true
 
 - name: link dotfiles
   file: >-
