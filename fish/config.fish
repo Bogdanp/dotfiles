@@ -36,7 +36,7 @@ set -xg DOCKER_MACHINE_NAME dinghy
 
 
 # Aliases
-alias sbcl="rlwrap sbcl"
+alias sbcl="rlwrap ros run"
 alias w=workon
 
 

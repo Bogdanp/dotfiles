@@ -26,7 +26,7 @@
     - protobuf
     - readline
     - rlwrap
-    - sbcl
+    - roswell
     - terminal-notifier
     - the_silver_searcher
     - tmux
