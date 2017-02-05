@@ -3,20 +3,12 @@ set -xg LC_ALL en_US.UTF-8
 set -xg LANG en_US.UTF-8
 
 # Path
-set -xg TEX_PATH /usr/local/texlive/2015/bin/x86_64-darwin
-
-set -xg GOGAE /usr/local/opt/go_appengine
 set -xg GOROOT /usr/local/opt/go/libexec
 set -xg GOPATH $HOME/sandbox/gopath
 
 set -xg PATH /usr/local/sbin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
-set -xg PATH $HOME/.local/bin $HOME/.rvm/bin $TEX_PATH $PATH
-set -xg PATH $PATH /usr/local/share/npm/bin
-set -xg PATH $PATH $HOME/sandbox/google-cloud-sdk/bin
-set -xg PATH $PATH $HOME/bin
-set -xg PATH $PATH $HOME/.cargo/bin
-set -xg PATH $PATH $GOROOT/bin $GOPATH/bin $GOGAE
-set -xg PATH $HOME/.composer/vendor/bin $PATH
+set -xg PATH $PATH $HOME/.local/bin $HOME/bin $HOME/sandbox/google-cloud-sdk/bin
+set -xg PATH $PATH $GOROOT/bin $GOPATH/bin
 set -xg MANPATH /usr/share/man /usr/local/share/man /opt/X11/share/man /usr/local/MacGPG2/share/man /Library/TeX/Distributions/.DefaultTeX/Contents/Man
 set -xg RUST_SRC_PATH $HOME/sandbox/rust/src
 
@@ -45,4 +37,4 @@ set fish_greeting
 
 
 # Python
-eval (python -m virtualfish)
+python -m virtualfish | source
