@@ -4,8 +4,8 @@
   vars:
     sandbox_path: ~/sandbox
   roles:
-    - homebrew
     - homebrew_cask
+    - homebrew
     - fish
     - docker
     - golang
