@@ -58,6 +58,7 @@ def displayhook(value):
 
         pprint.pprint(value)
 
+
 sys.displayhook = displayhook
 
 c = REPL(locals=locals())
