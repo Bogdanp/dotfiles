@@ -15,7 +15,6 @@
     - cloc
     - coreutils
     - curl
-    - emacs-mac
     - fish
     - fisherman
     - git
@@ -37,7 +36,13 @@
     - the_silver_searcher
     - tmux
 
-- name: install reattach-to-user-namespace
+- name: install emacs-mac from homebrew
+  homebrew: >-
+    name=emacs-mac
+    state=present
+    install_options=with-official-icon
+
+- name: install reattach-to-user-namespace from homebrew
   homebrew: >-
     name=reattach-to-user-namespace
     install_options=wrap-pbcopy-and-pbpaste
