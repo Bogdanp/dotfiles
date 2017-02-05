@@ -9,10 +9,11 @@
     - {name: "user.email", value: "popa.bogdanp@gmail.com"}
     - {name: "core.editor", value: "emacsclient"}
 
-# - name: make Fish the default shell
-#   user: >
-#     name=bogdan
-#     shell=/usr/local/bin/fish
+- name: make Fish the default shell
+  user: >
+    name=bogdan
+    shell=/usr/local/bin/fish
+  become: yes
 
 - name: clone dotfiles repo
   shell: >
