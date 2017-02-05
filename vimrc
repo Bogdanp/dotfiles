@@ -1,20 +1,3 @@
-" Disable filetype plugins for Vundle
-filetype off
-
-" Set up Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Plugins
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'Bogdanp/quicksilver.vim'
-
-call vundle#end()
-
 " Enable plugins and indentation for specific file types
 filetype plugin indent on
 
