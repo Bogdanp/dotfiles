@@ -44,7 +44,6 @@
     - {src: "/fish/functions/ec.fish", dest: "~/.config/fish/functions/ec.fish"}
     - {src: "/fish/functions/fish_prompt.fish", dest: "~/.config/fish/functions/fish_prompt.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
-    - {src: "/guile.scm", dest: "~/.guile"}
     - {src: "/psqlrc", dest: "~/.psqlrc"}
     - {src: "/pythonrc.py", dest: "~/.pythonrc.py"}
     - {src: "/tmux", dest: "~/.tmux"}
