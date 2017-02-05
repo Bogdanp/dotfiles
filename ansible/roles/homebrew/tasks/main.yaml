@@ -13,12 +13,14 @@
   with_items:
     - ack
     - cloc
+    - coreutils
     - curl
     - emacs-mac
     - fish
     - fisherman
     - git
     - graphviz
+    - ispell
     - jq
     - keybase
     - macvim
