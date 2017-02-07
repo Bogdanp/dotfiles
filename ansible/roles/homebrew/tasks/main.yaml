@@ -24,7 +24,8 @@
     - keybase
     - macvim
     - memcached
-    - notmuch
+    - libmemcached
+    - mysql
     - postgresql
     - protobuf
     - readline
