@@ -15,6 +15,7 @@
     - mactex
     - moom
     - screenflow
+    - screenhero
     - skype
     - slack
     - spotify
@@ -22,6 +23,7 @@
     - transmission
     - virtualbox
     - vlc
+    - wkhtmltopdf
 
 - name: ensure karabiner-elements config dir exists
   file: >-

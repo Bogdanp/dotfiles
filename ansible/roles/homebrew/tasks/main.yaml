@@ -28,6 +28,7 @@
     - postgresql
     - protobuf
     - readline
+    - redis
     - rlwrap
     - roswell
     - sbt
