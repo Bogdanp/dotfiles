@@ -7,6 +7,7 @@
     - homebrew_cask
     - homebrew
     - fish
+    - git
     - docker
     - golang
     - haskell

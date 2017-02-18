@@ -1,0 +1,25 @@
+---
+- name: configure git
+  git_config: >
+    name={{item.name}}
+    value={{item.value}}
+    scope=global
+  with_items:
+    - {name: "alias.a", value: "add"}
+    - {name: "alias.b", value: '!git for-each-ref --sort="-authordate" --format="%(color:yellow)%(authordate)%09%(color:red)%(objectname:short)%09%(color:blue)%(refname)" refs/heads | sed -e "s-refs/heads/--"'}
+    - {name: "alias.c", value: "commit"}
+    - {name: "alias.cam", value: "commit -am"}
+    - {name: "alias.co", value: "checkout"}
+    - {name: "alias.cob", value: "checkout -b"}
+    - {name: "alias.d", value: "diff"}
+    - {name: "alias.dc", value: "diff --cached"}
+    - {name: "alias.ds", value: "diff --stat"}
+    - {name: "alias.l", value: 'log --pretty=format:"%C(yellow)%h %ad%C(red)%d %C(reset)%s%C(blue) [%cn]" --decorate --date=short'}
+    - {name: "alias.la", value: "!git config -l | grep alias | cut -c 7-"}
+    - {name: "alias.last", value: "log  -1 HEAD"}
+    - {name: "alias.s", value: "status -s"}
+
+    - {name: "core.editor", value: "emacsclient"}
+
+    - {name: "user.name", value: "Bogdan Popa"}
+    - {name: "user.email", value: "popa.bogdanp@gmail.com"}

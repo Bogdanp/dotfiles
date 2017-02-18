@@ -1,14 +1,4 @@
 ---
-- name: configure git
-  git_config: >
-    name={{item.name}}
-    value={{item.value}}
-    scope=global
-  with_items:
-    - {name: "user.name", value: "Bogdan Popa"}
-    - {name: "user.email", value: "popa.bogdanp@gmail.com"}
-    - {name: "core.editor", value: "emacsclient"}
-
 - name: make Fish the default shell
   user: >
     name=bogdan
