@@ -32,9 +32,5 @@ alias sbcl="rlwrap ros run"
 alias w=workon
 
 
-# Fish
-set fish_greeting
-
-
 # Python
 python -m virtualfish | source
