@@ -16,6 +16,13 @@ set -xg RUST_SRC_PATH $HOME/sandbox/rust/src
 set -xg EDITOR ec
 
 
+# fzf
+set -xg FZF_DEFAULT_COMMAND 'find . -name Applications -prune -o -type f -print -o -type d -print -o -type l -print'
+set -xg FZF_DEFAULT_OPTS "--height 60% --reverse"
+set -xg FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+set -xg FZF_TMUX 1
+
+
 # Python
 set -xg PYTHONSTARTUP $HOME/.pythonrc.py
 
