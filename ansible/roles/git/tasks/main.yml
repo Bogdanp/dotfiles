@@ -14,9 +14,11 @@
     - {name: "alias.d", value: "diff"}
     - {name: "alias.dc", value: "diff --cached"}
     - {name: "alias.ds", value: "diff --stat"}
+    - {name: "alias.f", value: "fetch"}
     - {name: "alias.l", value: 'log --pretty=format:"%C(yellow)%h %ad%C(red)%d %C(reset)%s%C(blue) [%cn]" --decorate --date=short'}
     - {name: "alias.la", value: "!git config -l | grep alias | cut -c 7-"}
-    - {name: "alias.last", value: "log  -1 HEAD"}
+    - {name: "alias.last", value: "log -1 HEAD"}
+    - {name: "alias.lol", value: "log --online --graph --decorate"}
     - {name: "alias.s", value: "status -s"}
 
     - {name: "core.editor", value: "emacsclient"}
