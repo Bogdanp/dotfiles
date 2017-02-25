@@ -6,6 +6,7 @@
     scope=global
   with_items:
     - {name: "alias.a", value: "add"}
+    - {name: "alias.ap", value: "add -p"}
     - {name: "alias.b", value: '!git for-each-ref --sort="-authordate" --format="%(color:yellow)%(authordate)%09%(color:red)%(objectname:short)%09%(color:blue)%(refname)" refs/heads | sed -e "s-refs/heads/--"'}
     - {name: "alias.c", value: "commit"}
     - {name: "alias.cam", value: "commit -am"}
