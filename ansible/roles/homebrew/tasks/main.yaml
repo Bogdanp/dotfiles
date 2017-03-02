@@ -40,6 +40,7 @@
     - the_silver_searcher
     - tmux
     - tree
+    - watch
 
 - name: install emacs-mac from homebrew
   homebrew: >-
