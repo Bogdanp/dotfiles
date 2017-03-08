@@ -41,6 +41,7 @@
     - tmux
     - tree
     - watch
+    - yarn
 
 - name: install emacs-mac from homebrew
   homebrew: >-
