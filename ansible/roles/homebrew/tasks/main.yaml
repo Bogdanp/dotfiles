@@ -30,6 +30,7 @@
     - par
     - postgresql
     - protobuf
+    - pyenv
     - readline
     - redis
     - rlwrap
