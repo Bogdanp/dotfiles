@@ -15,6 +15,9 @@
     - cloc
     - coreutils
     - curl
+    - dcd
+    - dmd
+    - dub
     - fish
     - fisherman
     - fzf
