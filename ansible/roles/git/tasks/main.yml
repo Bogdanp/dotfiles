@@ -22,7 +22,7 @@
     - {name: "alias.lol", value: "log --oneline --graph --decorate"}
     - {name: "alias.s", value: "status -s"}
 
-    - {name: "core.editor", value: "emacsclient"}
+    - {name: "core.editor", value: "vim"}
 
     - {name: "user.name", value: "Bogdan Popa"}
     - {name: "user.email", value: "popa.bogdanp@gmail.com"}
