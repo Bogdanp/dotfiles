@@ -18,7 +18,6 @@
     - gnureadline
     - importmagic
     - jedi
-    - offlineimap
     - pip
     - pytest
     - pytest-cov
