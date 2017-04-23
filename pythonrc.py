@@ -16,6 +16,7 @@ EDITOR_COMMAND = r"\e"
 class REPL(InteractiveConsole):
     def __init__(self, *args, **kwargs):
         self.last_buffer = []
+
         InteractiveConsole.__init__(self, *args, **kwargs)
 
     def runsource(self, source, *args, **kwargs):
@@ -29,20 +30,13 @@ class REPL(InteractiveConsole):
 
             os.write(fd, b"\n".join(self.last_buffer))
             os.close(fd)
-            os.system("%s %s" % (EDITOR, filename))
+            os.system("vim " + filename)
 
-            with open(filename) as f:
-                lines = f.readlines()
-                if not lines:
-                    return ""
-
-                for i, line in enumerate(lines):
-                    if i == len(lines) - 1:
-                        break
-
-                    self.push(line)
-
-            os.unlink(filename)
+            try:
+                with open(filename) as f:
+                    return f.read()
+            finally:
+                os.unlink(filename)
 
         return line
 
