@@ -26,6 +26,8 @@ function workon
     if test -d "$HOME/.virtualenvs/$PROJECT";
       vf activate "$PROJECT"
     end;
+
+    tmux rename-window "$PROJECT"
   else;
     echo "usage: workon PROJECT"
     return 1
