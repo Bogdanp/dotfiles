@@ -49,5 +49,5 @@
   args:
     executable: /usr/local/bin/fish
   with_items:
-    - bass
+    - edc/bass
     - fzf
