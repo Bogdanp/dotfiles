@@ -5,6 +5,7 @@
   with_items:
     - fisherman/tap
     - railwaycat/emacsmacport
+    - johanhaleby/kubetail
 
 - name: install homebrew packages
   homebrew: >
@@ -25,6 +26,7 @@
     - graphviz
     - ispell
     - jq
+    - kubetail
     - macvim
     - memcached
     - libmemcached
