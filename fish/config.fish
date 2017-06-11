@@ -46,3 +46,9 @@ set -g VIRTUALFISH_VERSION 1.0.5
 set -g VIRTUALFISH_PYTHON_EXEC /usr/local/opt/python/bin/python2.7
 . /usr/local/lib/python2.7/site-packages/virtualfish/virtual.fish
 emit virtualfish_did_setup_plugins
+
+
+# Manta
+set -xg MANTA_URL https://us-east.manta.joyent.com
+set -xg MANTA_USER bogdanp
+set -xg MANTA_KEY_ID (ssh-keygen -l -f $HOME/.ssh/id_rsa.pub | awk '{print $2}')
