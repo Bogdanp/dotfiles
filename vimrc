@@ -39,7 +39,7 @@ set colorcolumn=120                     " Highlight the 120th column in a window
 set guifont=inconsolata:h14
 set guioptions=
 set hidden                              " Allow switching buffers without saving
-set ruler                               " Show the cursor position all the time
+" set ruler                               " Show the cursor position all the time  -- disabled due to lag
 set scrolloff=3                         " Top and bottom padding when scrolling
 set showcmd                             " Display incomplete commands
 set sidescrolloff=3                     " Left and right padding when scrolling
