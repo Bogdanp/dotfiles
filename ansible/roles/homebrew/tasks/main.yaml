@@ -28,9 +28,9 @@
     - ispell
     - jq
     - kubetail
+    - libmemcached
     - macvim
     - memcached
-    - libmemcached
     - mysql
     - par
     - postgresql
