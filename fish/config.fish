@@ -26,10 +26,10 @@ set -xg FZF_TMUX 0
 
 
 # Dinghy
-set -xg DOCKER_HOST tcp://192.168.99.100:2376
-set -xg DOCKER_CERT_PATH $HOME/.docker/machine/machines/dinghy
-set -xg DOCKER_TLS_VERIFY 1
-set -xg DOCKER_MACHINE_NAME dinghy
+set -gx DOCKER_TLS_VERIFY "1";
+set -gx DOCKER_HOST "tcp://192.168.99.100:2376";
+set -gx DOCKER_CERT_PATH "$HOME/.docker/machine/machines/dinghy";
+set -gx DOCKER_MACHINE_NAME "dinghy";
 
 
 # Aliases
