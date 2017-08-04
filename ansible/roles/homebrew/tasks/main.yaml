@@ -34,6 +34,7 @@
     - mysql
     - par
     - postgresql
+    - prometheus
     - protobuf
     - pyenv
     - readline
