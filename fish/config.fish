@@ -25,13 +25,6 @@ set -xg FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -xg FZF_TMUX 0
 
 
-# Dinghy
-set -gx DOCKER_TLS_VERIFY "1";
-set -gx DOCKER_HOST "tcp://192.168.99.100:2376";
-set -gx DOCKER_CERT_PATH "$HOME/.docker/machine/machines/dinghy";
-set -gx DOCKER_MACHINE_NAME "dinghy";
-
-
 # Aliases
 alias sbcl="rlwrap ros run"
 alias g=git
