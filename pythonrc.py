@@ -48,7 +48,7 @@ def displayhook(value):
 
             __builtin__._ = value
         except ImportError:
-            __builtins__._ = value
+            __builtins__["_"] = value
 
         pprint.pprint(value)
 
