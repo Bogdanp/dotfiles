@@ -9,7 +9,6 @@ from tempfile import mkstemp
 
 readline.parse_and_bind("tab: complete")
 
-EDITOR = "emacsclient"
 EDITOR_COMMAND = r"\e"
 
 
@@ -34,7 +33,9 @@ class REPL(InteractiveConsole):
 
             try:
                 with open(filename) as f:
-                    return f.read()
+                    lines = [line.rstrip() for line in f.readlines() if line.strip()]
+                    code = "\n".join(lines)
+                    return code + "\n"
             finally:
                 os.unlink(filename)
 
