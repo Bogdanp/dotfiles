@@ -44,12 +44,10 @@ class REPL(InteractiveConsole):
 
 def displayhook(value):
     if value is not None:
-        try:
-            import __builtin__
-
-            __builtin__._ = value
-        except ImportError:
+        if isinstance(__builtins__, dict):
             __builtins__["_"] = value
+        else:
+            __builtins__._ = value
 
         pprint.pprint(value)
 
