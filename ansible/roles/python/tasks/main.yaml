@@ -19,6 +19,7 @@
     - importmagic
     - jedi
     - pip
+    - pipenv
     - pytest
     - pytest-cov
     - pytest-xdist

@@ -33,6 +33,7 @@ alias w=workon
 
 # Python
 set -xg PYTHONSTARTUP $HOME/.pythonrc.py
+set -xg WORKON_HOME $HOME/.virtualenvs
 
 # Inlined output from (python -m virtualfish) for faster startup times:
 set -g VIRTUALFISH_VERSION 1.0.5
