@@ -27,6 +27,7 @@
     - graphviz
     - heroku
     - htop
+    - hugo
     - ispell
     - jq
     - kubetail
