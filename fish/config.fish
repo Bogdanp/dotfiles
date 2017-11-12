@@ -35,6 +35,11 @@ alias w=workon
 set -xg PYTHONSTARTUP $HOME/.pythonrc.py
 set -xg WORKON_HOME $HOME/.virtualenvs
 
+
+# Pipenv
+set -xg PIPENV_DEFAULT_PYTHON_VERSION "3.6"
+
+
 # Inlined output from (python -m virtualfish) for faster startup times:
 set -g VIRTUALFISH_VERSION 1.0.5
 set -g VIRTUALFISH_PYTHON_EXEC /usr/local/opt/python/bin/python2.7
