@@ -32,7 +32,6 @@ alias w=workon
 
 
 # Python
-set -xg PYTHONSTARTUP $HOME/.pythonrc.py
 set -xg WORKON_HOME $HOME/.virtualenvs
 
 
