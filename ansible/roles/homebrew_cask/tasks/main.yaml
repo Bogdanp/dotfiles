@@ -6,7 +6,6 @@
   with_items:
     - 1password
     - alfred
-    - caprine
     - dash
     - docker
     - dropbox
@@ -15,10 +14,10 @@
     - java
     - keka
     - mactex
+    - minikube
     - moom
     - ngrok
     - screenflow
-    - screenhero
     - skype
     - slack
     - spotify
