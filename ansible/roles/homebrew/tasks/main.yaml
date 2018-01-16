@@ -46,6 +46,7 @@
     - roswell
     - sbt
     - scala
+    - telnet
     - the_silver_searcher
     - tmux
     - tree
