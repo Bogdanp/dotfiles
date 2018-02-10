@@ -36,6 +36,8 @@
     - {src: "/fish/functions/ef.fish", dest: "~/.config/fish/functions/ef.fish"}
     - {src: "/fish/functions/fish_greeting.fish", dest: "~/.config/fish/functions/fish_greeting.fish"}
     - {src: "/fish/functions/fish_prompt.fish", dest: "~/.config/fish/functions/fish_prompt.fish"}
+    - {src: "/fish/functions/gpg_backup.fish", dest: "~/.config/fish/functions/gpg_backup.fish"}
+    - {src: "/fish/functions/gpg_restore.fish", dest: "~/.config/fish/functions/gpg_restore.fish"}
     - {src: "/fish/functions/instenv.fish", dest: "~/.config/fish/functions/instenv.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
     - {src: "/fish/functions/wf.fish", dest: "~/.config/fish/functions/wf.fish"}
