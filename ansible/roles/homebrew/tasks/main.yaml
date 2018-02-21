@@ -52,6 +52,7 @@
     - tree
     - vim
     - watch
+    - watchman
     - yarn
 
 - name: install emacs-mac from homebrew
