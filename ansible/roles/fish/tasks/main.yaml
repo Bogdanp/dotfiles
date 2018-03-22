@@ -36,6 +36,8 @@
     - {src: "/fish/functions/ef.fish", dest: "~/.config/fish/functions/ef.fish"}
     - {src: "/fish/functions/fish_greeting.fish", dest: "~/.config/fish/functions/fish_greeting.fish"}
     - {src: "/fish/functions/fish_prompt.fish", dest: "~/.config/fish/functions/fish_prompt.fish"}
+    - {src: "/fish/functions/forward-fish.fish", dest: "~/.config/fish/functions/forward-fish.fish"}
+    - {src: "/fish/functions/gcloud-switch-project.fish", dest: "~/.config/fish/functions/gcloud-switch-project.fish"}
     - {src: "/fish/functions/gpg_backup.fish", dest: "~/.config/fish/functions/gpg_backup.fish"}
     - {src: "/fish/functions/gpg_restore.fish", dest: "~/.config/fish/functions/gpg_restore.fish"}
     - {src: "/fish/functions/instenv.fish", dest: "~/.config/fish/functions/instenv.fish"}

@@ -61,8 +61,8 @@ set -xg PIPENV_DEFAULT_PYTHON_VERSION "3.6"
 # Virtualfish
 #   Inlined output from (python -m virtualfish) for faster startup times:
 set -g VIRTUALFISH_VERSION 1.0.5
-set -g VIRTUALFISH_PYTHON_EXEC /usr/local/opt/python/bin/python2.7
-. /usr/local/lib/python2.7/site-packages/virtualfish/virtual.fish
+set -g VIRTUALFISH_PYTHON_EXEC /usr/local/bin/python3.6
+. /usr/local/lib/python3.6/site-packages/virtualfish/virtual.fish
 emit virtualfish_did_setup_plugins
 
 
