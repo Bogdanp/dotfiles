@@ -26,6 +26,7 @@
     - gpg
     - graphviz
     - heroku
+    - hledger
     - htop
     - hugo
     - ispell
@@ -36,10 +37,12 @@
     - memcached
     - mysql
     - par
+    - pgbouncer
     - postgresql
     - prometheus
     - protobuf
     - pyenv
+    - racket
     - readline
     - redis
     - rlwrap
@@ -47,6 +50,7 @@
     - sbt
     - scala
     - telnet
+    - terminal-notifier
     - the_silver_searcher
     - tmux
     - tree
