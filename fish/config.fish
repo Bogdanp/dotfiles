@@ -10,6 +10,7 @@ set -xg GOPATH $HOME/sandbox/gopath
 set -xg PATH /usr/local/sbin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
 set -xg PATH $PATH $HOME/.local/bin $HOME/bin $HOME/sandbox/google-cloud-sdk/bin
 set -xg PATH $PATH $GOROOT/bin $GOPATH/bin
+set -xg PATH $PATH $HOME/.config/yarn/global/node_modules/.bin
 set -xg MANPATH /usr/share/man /usr/local/share/man /opt/X11/share/man /usr/local/MacGPG2/share/man /Library/TeX/Distributions/.DefaultTeX/Contents/Man
 set -xg RUST_SRC_PATH $HOME/sandbox/rust/src
 
@@ -61,8 +62,8 @@ set -xg PIPENV_DEFAULT_PYTHON_VERSION "3.6"
 # Virtualfish
 #   Inlined output from (python -m virtualfish) for faster startup times:
 set -g VIRTUALFISH_VERSION 1.0.5
-set -g VIRTUALFISH_PYTHON_EXEC /usr/local/bin/python3.6
-. /usr/local/lib/python3.6/site-packages/virtualfish/virtual.fish
+set -g VIRTUALFISH_PYTHON_EXEC /usr/local/bin/python3.7
+. /usr/local/lib/python3.7/site-packages/virtualfish/virtual.fish
 emit virtualfish_did_setup_plugins
 
 
@@ -74,3 +75,10 @@ set -xg MANTA_KEY_ID (ssh-keygen -l -f $HOME/.ssh/id_rsa.pub | awk '{print $2}')
 
 # GPG
 set -xg GPG_TTY (tty)
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/serverless.fish
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/sls.fish ]; and . /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/sls.fish
