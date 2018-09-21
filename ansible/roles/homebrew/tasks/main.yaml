@@ -16,9 +16,7 @@
     - cloc
     - coreutils
     - curl
-    - dcd
-    - dmd
-    - dub
+    - dnsmasq
     - fish
     - fisherman
     - fzf
