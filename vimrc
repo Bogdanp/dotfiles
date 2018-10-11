@@ -66,10 +66,6 @@ set autochdir                           " Change dir to current file automatical
 set tags+=./.tags;/
 set shell=/bin/bash
 
-" OCaml
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-
 " Bindings
 nnoremap / /\v
 vnoremap / /\v
