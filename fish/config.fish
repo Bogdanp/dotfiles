@@ -67,18 +67,5 @@ set -g VIRTUALFISH_PYTHON_EXEC /usr/local/bin/python3.7
 emit virtualfish_did_setup_plugins
 
 
-# Manta
-set -xg MANTA_URL https://us-east.manta.joyent.com
-set -xg MANTA_USER bogdanp
-set -xg MANTA_KEY_ID (ssh-keygen -l -f $HOME/.ssh/id_rsa.pub | awk '{print $2}')
-
-
 # GPG
 set -xg GPG_TTY (tty)
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/sls.fish ]; and . /Users/bogdan/.config/yarn/global/node_modules/tabtab/.completions/sls.fish
