@@ -56,7 +56,7 @@ end
 
 
 # Pipenv
-set -xg PIPENV_DEFAULT_PYTHON_VERSION "3.6"
+set -xg PIPENV_DEFAULT_PYTHON_VERSION "3.7"
 
 
 # Virtualfish
