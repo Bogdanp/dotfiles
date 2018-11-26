@@ -38,9 +38,9 @@ set -xg WORKON_HOME $HOME/.virtualenvs
 
 # Pyenv
 #   Inlined output from (pyenv init -)
-set -gx PATH "/Users/bogdan/.pyenv/shims" $PATH
+set -gx PATH '/Users/bogdan/.pyenv/shims' $PATH
 set -gx PYENV_SHELL fish
-source "/usr/local/Cellar/pyenv/1.1.5/libexec/../completions/pyenv.fish"
+source '/usr/local/Cellar/pyenv/1.2.8/libexec/../completions/pyenv.fish'
 command pyenv rehash 2>/dev/null
 function pyenv
   set command $argv[1]
@@ -53,10 +53,6 @@ function pyenv
     command pyenv "$command" $argv
   end
 end
-
-
-# Pipenv
-set -xg PIPENV_DEFAULT_PYTHON_VERSION "3.7"
 
 
 # Virtualfish
