@@ -1,0 +1,12 @@
+---
+- name: ensure mail dirs are present
+  file:
+    name: "{{ item }}"
+    state: directory
+  with_items:
+    - ~/Mail
+    - ~/Mail/business
+    - ~/Mail/personal-archive
+    - ~/Mail/personal
+    - ~/Mail/work-blockfraud
+    - ~/Mail/work-remoteonly

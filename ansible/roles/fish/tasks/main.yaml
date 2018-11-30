@@ -43,6 +43,9 @@
     - {src: "/fish/functions/instenv.fish", dest: "~/.config/fish/functions/instenv.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
     - {src: "/fish/functions/wf.fish", dest: "~/.config/fish/functions/wf.fish"}
+    - {src: "/bashrc", dest: "~/.bashrc"}
+    - {src: "/mbsyncrc", dest: "~/.mbsyncrc"}
+    - {src: "/msmtprc", dest: "~/.msmtprc"}
     - {src: "/psqlrc", dest: "~/.psqlrc"}
     - {src: "/tmux", dest: "~/.tmux"}
     - {src: "/tmux.conf", dest: "~/.tmux.conf"}

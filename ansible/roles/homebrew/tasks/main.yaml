@@ -28,11 +28,13 @@
     - htop
     - hugo
     - ispell
+    - isync
     - jq
     - kubetail
     - libmemcached
     - macvim
     - memcached
+    - msmtp
     - mysql
     - par
     - pgbouncer
@@ -55,6 +57,12 @@
     - watch
     - watchman
     - yarn
+
+- name: install mu with emacs support
+  homebrew: >-
+    name=mu
+    state=present
+    install_options=with-emacs
 
 - name: install emacs-mac from homebrew
   homebrew: >-
