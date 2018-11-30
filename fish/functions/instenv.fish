@@ -1,9 +1,9 @@
 function instenv
   if test -e Pipfile
-    pip install -U pip flake8 flake8-quotes isort jedi gnureadline
+    pip install -U pip flake8 flake8-bugbear flake8-quotes isort jedi rope gnureadline
     pipenv install --dev
   else if test -e pyproject.toml
-    pip install -U pip flake8 flake8-quotes isort jedi gnureadline
+    pip install -U pip flake8 flake8-bugbear flake8-quotes isort jedi rope gnureadline
     poetry install
   else if test -e requirements.in
     pip-compile requirements.in
@@ -19,6 +19,6 @@ function instenv
       set reqs requirements/dev.txt
     end
 
-    pip install -U pip flake8 flake8-quotes isort jedi gnureadline -r $reqs
+    pip install -U pip flake8 flake8-bugbear flake8-quotes isort jedi rope gnureadline -r $reqs
   end
 end
