@@ -1,0 +1,18 @@
+[extensions]
+largefiles =
+strip =
+
+[ui]
+username = Bogdan Popa <bogdan@defn.io>
+editor = vim
+
+[alias]
+s = status
+
+l = log
+ls = log --limit 10
+
+c = commit
+ca = commit -A
+cam = commit -A -m $1
+ci = commit --interactive
