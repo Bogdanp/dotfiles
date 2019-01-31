@@ -1,10 +1,12 @@
 [extensions]
 largefiles =
+rebase =
 strip =
 
 [ui]
-username = Bogdan Popa <bogdan@defn.io>
 editor = vim
+ignore = ~/.hgignore
+username = Bogdan Popa <bogdan@defn.io>
 
 [alias]
 s = status
