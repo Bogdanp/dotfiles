@@ -44,7 +44,6 @@
     - prometheus
     - protobuf
     - pyenv
-    - racket
     - readline
     - redis
     - rlwrap
