@@ -46,8 +46,6 @@
     - readline
     - redis
     - rlwrap
-    - sbt
-    - scala
     - telnet
     - terminal-notifier
     - the_silver_searcher
