@@ -13,5 +13,5 @@ Email is synced via [isync] and sent via [msmtp], both of these use
 the OS X keychain for password management.
 
 
-[mbsync]: http://isync.sourceforge.net/
+[isync]: http://isync.sourceforge.net/
 [msmtp]: https://marlam.de/msmtp/
