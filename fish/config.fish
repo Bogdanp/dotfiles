@@ -29,7 +29,7 @@ set -xg WORKON_HOME $HOME/.virtualenvs
 #   Inlined output from (pyenv init -)
 set -gx PATH '/Users/bogdan/.pyenv/shims' $PATH
 set -gx PYENV_SHELL fish
-source '/usr/local/Cellar/pyenv/1.2.8/libexec/../completions/pyenv.fish'
+source '/usr/local/Cellar/pyenv/1.2.9/libexec/../completions/pyenv.fish'
 command pyenv rehash 2>/dev/null
 function pyenv
   set command $argv[1]
@@ -46,9 +46,9 @@ end
 
 # Virtualfish
 #   Inlined output from (python -m virtualfish) for faster startup times:
-set -g VIRTUALFISH_VERSION 1.0.5
-set -g VIRTUALFISH_PYTHON_EXEC /usr/local/bin/python3.7
-. /usr/local/lib/python3.7/site-packages/virtualfish/virtual.fish
+set -g VIRTUALFISH_VERSION 1.0.6
+set -g VIRTUALFISH_PYTHON_EXEC /Users/bogdan/.pyenv/versions/3.7.0/bin/python
+source /Users/bogdan/.pyenv/versions/3.7.0/lib/python3.7/site-packages/virtualfish/virtual.fish
 emit virtualfish_did_setup_plugins
 
 
