@@ -24,10 +24,10 @@
 
 - name: ensure karabiner-elements config dir exists
   file: >-
-    path=~/.karabiner.d/configuration
+    path=~/.config/karabiner
     state=directory
 
 - name: setup karabiner-elements config
   copy: >-
     src=karabiner.json
-    dest=~/.karabiner.d/configuration/karabiner.json
+    dest=~/.config/karabiner/karabiner.json
