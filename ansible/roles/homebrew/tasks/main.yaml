@@ -5,7 +5,6 @@
   with_items:
     - fisherman/tap
     - railwaycat/emacsmacport
-    - johanhaleby/kubetail
 
 - name: install homebrew packages
   homebrew: >
@@ -13,7 +12,6 @@
     state=present
   with_items:
     - ack
-    - carthage
     - cloc
     - coreutils
     - curl
@@ -30,9 +28,7 @@
     - ispell
     - isync
     - jq
-    - kubetail
     - libmemcached
-    - macvim
     - memcached
     - mercurial
     - msmtp
@@ -41,7 +37,6 @@
     - pgbouncer
     - postgresql
     - prometheus
-    - protobuf
     - pyenv
     - readline
     - redis
@@ -54,7 +49,6 @@
     - vim
     - watch
     - watchman
-    - yarn
 
 - name: install mu with emacs support
   homebrew: >-
