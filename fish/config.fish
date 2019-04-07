@@ -5,7 +5,7 @@ set -xg LANG en_US.UTF-8
 
 # Path
 set -xg PATH /usr/local/sbin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
-set -xg PATH $PATH $HOME/.local/bin $HOME/bin $HOME/sandbox/google-cloud-sdk/bin
+set -xg PATH $PATH $HOME/.local/bin $HOME/bin
 set -xg PATH $PATH $HOME/.config/yarn/global/node_modules/.bin
 set -xg MANPATH /usr/share/man /usr/local/share/man /opt/X11/share/man /usr/local/MacGPG2/share/man /Library/TeX/Distributions/.DefaultTeX/Contents/Man
 set -xg RUST_SRC_PATH $HOME/sandbox/rust/src
