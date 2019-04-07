@@ -41,6 +41,7 @@
     - {src: "/fish/functions/gpg_backup.fish", dest: "~/.config/fish/functions/gpg_backup.fish"}
     - {src: "/fish/functions/gpg_restore.fish", dest: "~/.config/fish/functions/gpg_restore.fish"}
     - {src: "/fish/functions/instenv.fish", dest: "~/.config/fish/functions/instenv.fish"}
+    - {src: "/fish/functions/ssh_backup.fish", dest: "~/.config/fish/functions/ssh_backup.fish"}
     - {src: "/fish/functions/vf-cleanup.fish", dest: "~/.config/fish/functions/vf-cleanup.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
     - {src: "/bashrc", dest: "~/.bashrc"}
