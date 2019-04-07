@@ -36,13 +36,13 @@
     - {src: "/fish/functions/ef.fish", dest: "~/.config/fish/functions/ef.fish"}
     - {src: "/fish/functions/fish_greeting.fish", dest: "~/.config/fish/functions/fish_greeting.fish"}
     - {src: "/fish/functions/fish_prompt.fish", dest: "~/.config/fish/functions/fish_prompt.fish"}
-    - {src: "/fish/functions/forward-fish.fish", dest: "~/.config/fish/functions/forward-fish.fish"}
+    - {src: "/fish/functions/forward-plex.fish", dest: "~/.config/fish/functions/forward-plex.fish"}
     - {src: "/fish/functions/gcloud-switch-project.fish", dest: "~/.config/fish/functions/gcloud-switch-project.fish"}
     - {src: "/fish/functions/gpg_backup.fish", dest: "~/.config/fish/functions/gpg_backup.fish"}
     - {src: "/fish/functions/gpg_restore.fish", dest: "~/.config/fish/functions/gpg_restore.fish"}
     - {src: "/fish/functions/instenv.fish", dest: "~/.config/fish/functions/instenv.fish"}
+    - {src: "/fish/functions/vf-cleanup.fish", dest: "~/.config/fish/functions/vf-cleanup.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
-    - {src: "/fish/functions/wf.fish", dest: "~/.config/fish/functions/wf.fish"}
     - {src: "/bashrc", dest: "~/.bashrc"}
     - {src: "/hgignore", dest: "~/.hgignore"}
     - {src: "/hgrc", dest: "~/.hgrc"}
