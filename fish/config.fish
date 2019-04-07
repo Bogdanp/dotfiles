@@ -16,7 +16,6 @@ set -xg EDITOR ec
 
 
 # Aliases
-alias sbcl="rlwrap ros run"
 alias g=git
 alias w=workon
 
