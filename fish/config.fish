@@ -28,7 +28,7 @@ set -xg WORKON_HOME $HOME/.virtualenvs
 #   Inlined output from (pyenv init -)
 set -gx PATH '/Users/bogdan/.pyenv/shims' $PATH
 set -gx PYENV_SHELL fish
-source '/usr/local/Cellar/pyenv/1.2.9/libexec/../completions/pyenv.fish'
+source '/usr/local/Cellar/pyenv/1.2.10/libexec/../completions/pyenv.fish'
 command pyenv rehash 2>/dev/null
 function pyenv
   set command $argv[1]
