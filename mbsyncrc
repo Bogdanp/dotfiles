@@ -60,62 +60,6 @@ Channel business-junk
 Channel business-trash
 
 
-## personal (archived) gmail ##################################################
-## IMAPAccount personal-archive
-## Host imap.gmail.com
-## User popa.bogdanp@gmail.com
-## PassCmd "security find-internet-password -s 'imap.gmail.com' -a 'popa.bogdanp@gmail.com' -w"
-## AuthMechs LOGIN
-## Port 993
-## SSLType IMAPS
-## CertificateFile /etc/ssl/certs/ca-certificates.crt
-##
-## IMAPStore personal-archive-remote
-## Account personal-archive
-##
-## MaildirStore personal-archive-local
-## Path ~/Mail/personal-archive/
-## Inbox ~/Mail/personal-archive/INBOX
-##
-## Channel personal-archive-inbox
-## Master :personal-archive-remote:"INBOX"
-## Slave :personal-archive-local:inbox
-## Create Both
-## Expunge Both
-##
-## Channel personal-archive-archive
-## Master :personal-archive-remote:"[Gmail]/All Mail"
-## Slave :personal-archive-local:archive
-## Create Both
-## Expunge Both
-##
-## Channel personal-archive-sent
-## Master :personal-archive-remote:"[Gmail]/Sent Mail"
-## Slave :personal-archive-local:sent
-## Create Both
-## Expunge Both
-##
-## Channel personal-archive-trash
-## Master :personal-archive-remote:"[Gmail]/Trash"
-## Slave :personal-archive-local:trash
-## Create Both
-## Expunge Both
-##
-## Channel personal-archive-trash
-## Master :personal-archive-remote:"[Gmail]/Drafts"
-## Slave :personal-archive-local:drafts
-## Create Both
-## Expunge Both
-##
-## Group personal-archive
-## Channel personal-archive-inbox
-## Channel personal-archive-archive
-## Channel personal-archive-drafts
-## Channel personal-archive-sent
-## Channel personal-archive-junk
-## Channel personal-archive-trash
-
-
 ## personal ###################################################################
 IMAPAccount personal
 Host imap.fastmail.com
@@ -178,125 +122,57 @@ Channel personal-junk
 Channel personal-trash
 
 
-## work-blockfraud ###################################################################
-IMAPAccount work-blockfraud
-Host imap.gmail.com
-User bogdan@blockfraud.com
-PassCmd "security find-internet-password -s 'imap.gmail.com' -a 'bogdan@blockfraud.com' -w"
-AuthMechs LOGIN
-Port 993
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore work-blockfraud-remote
-Account work-blockfraud
-
-MaildirStore work-blockfraud-local
-Path ~/Mail/work-blockfraud/
-Inbox ~/Mail/work-blockfraud/INBOX
-
-Channel work-blockfraud-inbox
-Master :work-blockfraud-remote:"INBOX"
-Slave :work-blockfraud-local:inbox
-Create Both
-Expunge Both
-
-Channel work-blockfraud-archive
-Master :work-blockfraud-remote:"[Gmail]/All Mail"
-Slave :work-blockfraud-local:archive
-Create Both
-Expunge Both
-
-Channel work-blockfraud-drafts
-Master :work-blockfraud-remote:"[Gmail]/Drafts"
-Slave :work-blockfraud-local:drafts
-Create Both
-Expunge Both
-
-Channel work-blockfraud-sent
-Master :work-blockfraud-remote:"[Gmail]/Sent Mail"
-Slave :work-blockfraud-local:sent
-Create Both
-Expunge Both
-
-Channel work-blockfraud-junk
-Master :work-blockfraud-remote:"[Gmail]/Spam"
-Slave :work-blockfraud-local:junk
-Create Both
-Expunge Both
-
-Channel work-blockfraud-trash
-Master :work-blockfraud-remote:"[Gmail]/Trash"
-Slave :work-blockfraud-local:trash
-Create Both
-Expunge Both
-
-Group work-blockfraud
-Channel work-blockfraud-inbox
-Channel work-blockfraud-archive
-Channel work-blockfraud-drafts
-Channel work-blockfraud-sent
-Channel work-blockfraud-junk
-Channel work-blockfraud-trash
-
-
-## work-gamemine ###################################################################
-IMAPAccount work-gamemine
-Host mail.gamemine.com
-User bogdan@gamemine.com
-PassCmd "security find-internet-password -s 'mail.gamemine.com' -a 'bogdan@gamemine.com' -w"
-AuthMechs LOGIN
-Port 993
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore work-gamemine-remote
-Account work-gamemine
-
-MaildirStore work-gamemine-local
-Path ~/Mail/work-gamemine/
-Inbox ~/Mail/work-gamemine/INBOX
-
-Channel work-gamemine-inbox
-Master :work-gamemine-remote:"INBOX"
-Slave :work-gamemine-local:inbox
-Create Both
-Expunge Both
-
-Channel work-gamemine-archive
-Master :work-gamemine-remote:"Archive"
-Slave :work-gamemine-local:archive
-Create Both
-Expunge Both
-
-Channel work-gamemine-drafts
-Master :work-gamemine-remote:"Drafts"
-Slave :work-gamemine-local:drafts
-Create Both
-Expunge Both
-
-Channel work-gamemine-sent
-Master :work-gamemine-remote:"Sent"
-Slave :work-gamemine-local:sent
-Create Both
-Expunge Both
-
-Channel work-gamemine-junk
-Master :work-gamemine-remote:"Junk"
-Slave :work-gamemine-local:junk
-Create Both
-Expunge Both
-
-Channel work-gamemine-trash
-Master :work-gamemine-remote:"Trash"
-Slave :work-gamemine-local:trash
-Create Both
-Expunge Both
-
-Group work-gamemine
-Channel work-gamemine-inbox
-Channel work-gamemine-archive
-Channel work-gamemine-drafts
-Channel work-gamemine-sent
-Channel work-gamemine-junk
-Channel work-gamemine-trash
+## personal (archived) gmail ##################################################
+## IMAPAccount personal-archive
+## Host imap.gmail.com
+## User popa.bogdanp@gmail.com
+## PassCmd "security find-internet-password -s 'imap.gmail.com' -a 'popa.bogdanp@gmail.com' -w"
+## AuthMechs LOGIN
+## Port 993
+## SSLType IMAPS
+## CertificateFile /etc/ssl/certs/ca-certificates.crt
+##
+## IMAPStore personal-archive-remote
+## Account personal-archive
+##
+## MaildirStore personal-archive-local
+## Path ~/Mail/personal-archive/
+## Inbox ~/Mail/personal-archive/INBOX
+##
+## Channel personal-archive-inbox
+## Master :personal-archive-remote:"INBOX"
+## Slave :personal-archive-local:inbox
+## Create Both
+## Expunge Both
+##
+## Channel personal-archive-archive
+## Master :personal-archive-remote:"[Gmail]/All Mail"
+## Slave :personal-archive-local:archive
+## Create Both
+## Expunge Both
+##
+## Channel personal-archive-sent
+## Master :personal-archive-remote:"[Gmail]/Sent Mail"
+## Slave :personal-archive-local:sent
+## Create Both
+## Expunge Both
+##
+## Channel personal-archive-trash
+## Master :personal-archive-remote:"[Gmail]/Trash"
+## Slave :personal-archive-local:trash
+## Create Both
+## Expunge Both
+##
+## Channel personal-archive-trash
+## Master :personal-archive-remote:"[Gmail]/Drafts"
+## Slave :personal-archive-local:drafts
+## Create Both
+## Expunge Both
+##
+## Group personal-archive
+## Channel personal-archive-inbox
+## Channel personal-archive-archive
+## Channel personal-archive-drafts
+## Channel personal-archive-sent
+## Channel personal-archive-junk
+## Channel personal-archive-trash
