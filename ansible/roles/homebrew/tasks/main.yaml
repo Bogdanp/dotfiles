@@ -41,6 +41,7 @@
     - readline
     - redis
     - rlwrap
+    - tarsnap
     - telnet
     - terminal-notifier
     - the_silver_searcher

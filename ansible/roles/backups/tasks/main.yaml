@@ -1,0 +1,5 @@
+---
+- name: ensure the tarsnap.conf is present
+  copy: >-
+    src=tarsnap.conf
+    dest=/usr/local/etc/tarsnap.conf
