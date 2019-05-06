@@ -50,6 +50,7 @@
     - vim
     - watch
     - watchman
+    - ykman
 
 - name: install mu with emacs support
   homebrew: >-
