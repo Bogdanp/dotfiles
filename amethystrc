@@ -17,6 +17,7 @@
   ],
   "mod2": [
     "command",
+    "option",
     "shift"
   ],
   "screens": 2,
@@ -91,7 +92,7 @@
     "key": "n"
   },
   "swap-main": {
-    "mod": "mod1",
+    "mod": "mod2",
     "key": "enter"
   },
   "throw-space-1": {
