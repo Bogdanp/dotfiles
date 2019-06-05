@@ -5,6 +5,7 @@
     state=present
   with_items:
     - 1password
+    - amethyst
     - dash
     - docker
     - firefox

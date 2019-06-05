@@ -1,0 +1,8 @@
+{
+  "^w" = "deleteWordBackward:";
+  "~d" = "deleteWordForward:";
+  "~b" = "moveWordBackward:";
+  "~f" = "moveWordForward:";
+  "~V" = "scrollPageUp:";
+  "~v" = "scrollPageDown:";
+}

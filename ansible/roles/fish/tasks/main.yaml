@@ -24,6 +24,12 @@
     state=directory
     recurse=true
 
+- name: ensure KeyBindings directory exists
+  file: >-
+    path=~/Library/KeyBindings
+    state=directory
+    recurse=true
+
 - name: link dotfiles
   file: >-
     src={{sandbox_path}}/dotfiles{{item.src}}
@@ -45,6 +51,8 @@
     - {src: "/fish/functions/ssh_backup.fish", dest: "~/.config/fish/functions/ssh_backup.fish"}
     - {src: "/fish/functions/vf-cleanup.fish", dest: "~/.config/fish/functions/vf-cleanup.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
+    - {src: "/DefaultKeyBinding.dict", dest: "~/Library/KeyBindings/DefaultKeyBinding.dict" }
+    - {src: "/amethyst", dest: "~/.amethyst" }
     - {src: "/bashrc", dest: "~/.bashrc"}
     - {src: "/hgignore", dest: "~/.hgignore"}
     - {src: "/hgrc", dest: "~/.hgrc"}
