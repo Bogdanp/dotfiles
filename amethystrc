@@ -139,11 +139,11 @@
   "throw-space-right": false,
   "toggle-float": {
     "mod": "mod1",
-    "key": "t"
+    "key": "f"
   },
   "toggle-tiling": {
     "mod": "mod2",
-    "key": "t"
+    "key": "z"
   },
   "display-current-layout": false,
   "reevaluate-windows": {
