@@ -21,8 +21,14 @@
     "shift"
   ],
   "screens": 2,
-  "cycle-layout": false,
-  "cycle-layout-backward": false,
+  "cycle-layout": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
+  "cycle-layout-backward": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "select-tall-layout": {
     "mod": "mod1",
     "key": "a"
@@ -47,8 +53,14 @@
     "mod": "mod1",
     "key": "e"
   },
-  "focus-screen-3": false,
-  "focus-screen-4": false,
+  "focus-screen-3": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
+  "focus-screen-4": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "throw-screen-1": {
     "mod": "mod2",
     "key": "w"
@@ -57,8 +69,14 @@
     "mod": "mod2",
     "key": "e"
   },
-  "throw-screen-3": false,
-  "throw-screen-4": false,
+  "throw-screen-3": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
+  "throw-screen-4": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "shrink-main": {
     "mod": "mod1",
     "key": "h"
@@ -67,8 +85,14 @@
     "mod": "mod1",
     "key": "l"
   },
-  "increase-main": false,
-  "decrease-main": false,
+  "increase-main": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
+  "decrease-main": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "focus-ccw": {
     "mod": "mod1",
     "key": "p"
@@ -81,8 +105,14 @@
     "mod": "mod1",
     "key": "m"
   },
-  "swap-screen-ccw": false,
-  "swap-screen-cw": false,
+  "swap-screen-ccw": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
+  "swap-screen-cw": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "swap-ccw": {
     "mod": "mod2",
     "key": "p"
@@ -135,8 +165,14 @@
     "mod": "mod2",
     "key": "0"
   },
-  "throw-space-left": false,
-  "throw-space-right": false,
+  "throw-space-left": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
+  "throw-space-right": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "toggle-float": {
     "mod": "mod1",
     "key": "f"
@@ -145,12 +181,18 @@
     "mod": "mod2",
     "key": "z"
   },
-  "display-current-layout": false,
+  "display-current-layout": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "reevaluate-windows": {
     "mod": "mod1",
     "key": "z"
   },
-  "toggle-focus-follows-mouse": false,
+  "toggle-focus-follows-mouse": {
+    "mod": "mod1",
+    "key": "disabled"
+  },
   "floating": [
     "com.agilebits.onepassword7",
     "com.apple.finder",
