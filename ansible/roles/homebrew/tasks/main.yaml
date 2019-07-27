@@ -34,7 +34,6 @@
     - msmtp
     - mysql
     - par
-    - pgbouncer
     - postgresql
     - prometheus
     - pyenv
