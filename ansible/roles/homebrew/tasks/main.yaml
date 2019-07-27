@@ -4,7 +4,6 @@
     name={{item}}
   with_items:
     - fisherman/tap
-    - railwaycat/emacsmacport
 
 - name: install homebrew packages
   homebrew: >
@@ -16,6 +15,7 @@
     - coreutils
     - curl
     - dnsmasq
+    - emacs
     - fish
     - fisherman
     - git
@@ -56,12 +56,6 @@
     name=mu
     state=present
     install_options=with-emacs
-
-- name: install emacs-mac from homebrew
-  homebrew: >-
-    name=emacs-mac
-    state=present
-    install_options=with-official-icon
 
 - name: install reattach-to-user-namespace from homebrew
   homebrew: >-
