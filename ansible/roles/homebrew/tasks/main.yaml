@@ -36,7 +36,6 @@
     - par
     - postgresql
     - prometheus
-    - pyenv
     - readline
     - redis
     - rlwrap
