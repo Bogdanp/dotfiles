@@ -26,30 +26,11 @@ alias w=workon
 set -xg WORKON_HOME $HOME/.virtualenvs
 
 
-# Pyenv
-#   Inlined output from (pyenv init -)
-# set -gx PATH '/Users/bogdan/.pyenv/shims' $PATH
-# set -gx PYENV_SHELL fish
-# source '/usr/local/Cellar/pyenv/1.2.13/libexec/../completions/pyenv.fish'
-# command pyenv rehash 2>/dev/null
-# function pyenv
-#   set command $argv[1]
-#   set -e argv[1]
-
-#   switch "$command"
-#   case rehash shell
-#     source (pyenv "sh-$command" $argv|psub)
-#   case '*'
-#     command pyenv "$command" $argv
-#   end
-# end
-
-
 # Virtualfish
 #   Inlined output from (python -m virtualfish) for faster startup times:
 set -g VIRTUALFISH_VERSION 1.0.6
-set -g VIRTUALFISH_PYTHON_EXEC /Users/bogdan/.pyenv/versions/3.7.0/bin/python
-source /Users/bogdan/.pyenv/versions/3.7.0/lib/python3.7/site-packages/virtualfish/virtual.fish
+set -g VIRTUALFISH_PYTHON_EXEC /usr/local/opt/python/bin/python3.7
+source /usr/local/lib/python3.7/site-packages/virtualfish/virtual.fish
 emit virtualfish_did_setup_plugins
 
 
