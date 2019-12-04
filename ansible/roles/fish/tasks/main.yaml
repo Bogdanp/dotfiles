@@ -49,6 +49,7 @@
     - {src: "/fish/functions/gpg_restore.fish", dest: "~/.config/fish/functions/gpg_restore.fish"}
     - {src: "/fish/functions/instenv.fish", dest: "~/.config/fish/functions/instenv.fish"}
     - {src: "/fish/functions/ssh_backup.fish", dest: "~/.config/fish/functions/ssh_backup.fish"}
+    - {src: "/fish/functions/t.fish", dest: "~/.config/fish/functions/t.fish"}
     - {src: "/fish/functions/vf-cleanup.fish", dest: "~/.config/fish/functions/vf-cleanup.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
     - {src: "/DefaultKeyBinding.dict", dest: "~/Library/KeyBindings/DefaultKeyBinding.dict" }
