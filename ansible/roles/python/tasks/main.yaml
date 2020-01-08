@@ -1,15 +1,10 @@
 ---
-- name: install python packages
-  homebrew:
-    name:
-      - python
-      - python3
-    state: present
-
 - name: install python libraries
   pip:
     name:
+      - ansible-lint
       - autopep8
+      - fava
       - flake8
       - gnureadline
       - importmagic
@@ -24,3 +19,13 @@
       - virtualenv
       - virtualfish
     state: present
+    extra_args: --user
+
+- name: link python binaries
+  file:
+    src: ~/Library/Python/3.7/bin/{{ item }}
+    dest: /usr/local/bin/{{ item }}
+    state: link
+  with_items:
+    - ansible-lint
+    - fava

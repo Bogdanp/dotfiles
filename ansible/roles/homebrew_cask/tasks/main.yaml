@@ -23,11 +23,11 @@
     state: present
 
 - name: ensure karabiner-elements config dir exists
-  file: 
+  file:
     path: ~/.config/karabiner
     state: directory
 
 - name: setup karabiner-elements config
-  copy: 
+  copy:
     src: karabiner.json
     dest: ~/.config/karabiner/karabiner.json
