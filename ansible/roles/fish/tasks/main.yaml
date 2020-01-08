@@ -37,7 +37,6 @@
     state=link
   with_items:
     - {src: "/fish/config.fish", dest: "~/.config/fish/config.fish"}
-    - {src: "/fish/functions/backup.fish", dest: "~/.config/fish/functions/backup.fish"}
     - {src: "/fish/functions/docker-cleanup.fish", dest: "~/.config/fish/functions/docker-cleanup.fish"}
     - {src: "/fish/functions/ec.fish", dest: "~/.config/fish/functions/ec.fish"}
     - {src: "/fish/functions/fish_greeting.fish", dest: "~/.config/fish/functions/fish_greeting.fish"}

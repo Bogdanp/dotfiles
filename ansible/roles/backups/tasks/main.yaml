@@ -1,5 +1,24 @@
 ---
 - name: ensure the tarsnap.conf is present
-  copy: >-
-    src=tarsnap.conf
-    dest=/usr/local/etc/tarsnap.conf
+  copy:
+    src: tarsnap.conf
+    dest: /usr/local/etc/tarsnap.conf
+
+- name: install backup script
+  copy:
+    src: tarsnap-perform-backup
+    dest: /usr/local/bin/tarsnap-perform-backup
+    mode: "0744"
+
+- name: copy backup launch agent
+  copy:
+    src: io.defn.tarsnap-backup.plist
+    dest: ~/Library/LaunchAgents/io.defn.tarsnap-backup.plist
+
+- name: install backup launch agent
+  shell: |
+    if launchctl stop io.defn.tarsnap-backup; then
+      launchctl unload ~/Library/LaunchAgents/io.defn.tarsnap-backup.plist
+    fi
+    launchctl load ~/Library/LaunchAgents/io.defn.tarsnap-backup.plist
+    launchctl start io.defn.tarsnap-backup

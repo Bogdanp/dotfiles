@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+/usr/local/bin/tarsnap -c -f "mbp-$(date +%Y-%m-%d_%H-%M-%S)" ~/.ssh ~/Documents ~/Mail
