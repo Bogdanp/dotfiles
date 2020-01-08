@@ -14,6 +14,7 @@
     - python
     - ruby
     - backups
+    - accounting
 
   pre_tasks:
     - name: install command line tools
