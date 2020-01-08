@@ -13,6 +13,7 @@
     - node
     - python
     - ruby
+    - backups
 
   pre_tasks:
     - name: install command line tools
