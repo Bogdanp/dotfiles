@@ -11,6 +11,7 @@
       - emacs
       - fish
       - git
+      - git-lfs
       - gpg
       - graphviz
       - hledger
