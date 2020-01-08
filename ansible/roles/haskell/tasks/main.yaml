@@ -1,9 +1,8 @@
 ---
 - name: install stack
   homebrew:
-    name={{item}} state=present
-  with_items:
-    - haskell-stack
+    name: haskell-stack
+    state: present
 
 - name: ensure stack directories exist
   file: >-

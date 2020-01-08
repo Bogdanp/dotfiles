@@ -1,29 +1,26 @@
 ---
 - name: install python packages
-  homebrew: >
-    name={{item}}
-    state=present
-  with_items:
-    - python
-    - python3
+  homebrew:
+    name:
+      - python
+      - python3
+    state: present
 
 - name: install python libraries
-  pip: >
-    name={{item}}
-    state=present
-    extra_args=-U
-  with_items:
-    - autopep8
-    - flake8
-    - gnureadline
-    - importmagic
-    - jedi
-    - pip
-    - pipenv
-    - pytest
-    - pytest-cov
-    - pytest-xdist
-    - pytest-pythonpath
-    - rope
-    - virtualenv
-    - virtualfish
+  pip:
+    name:
+      - autopep8
+      - flake8
+      - gnureadline
+      - importmagic
+      - jedi
+      - pip
+      - pipenv
+      - pytest
+      - pytest-cov
+      - pytest-xdist
+      - pytest-pythonpath
+      - rope
+      - virtualenv
+      - virtualfish
+    state: present

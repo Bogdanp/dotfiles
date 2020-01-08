@@ -1,32 +1,33 @@
 ---
 - name: install cask packages
-  homebrew_cask: >
-    name={{item}}
-    state=present
-  with_items:
-    - 1password
-    - amethyst
-    - dash
-    - docker
-    - firefox
-    - java
-    - mactex
-    - ngrok
-    - opensc
-    - screenflow
-    - skype
-    - spotify
-    - steam
-    - transmission
-    - virtualbox
-    - vlc
+  homebrew_cask:
+    name:
+      - 1password
+      - amethyst
+      - dash
+      - docker
+      - firefox
+      - java
+      - karabiner-elements
+      - mactex
+      - ngrok
+      - opensc
+      - screenflow
+      - skype
+      - spotify
+      - steam
+      - telegram
+      - transmission
+      - virtualbox
+      - vlc
+    state: present
 
 - name: ensure karabiner-elements config dir exists
-  file: >-
-    path=~/.config/karabiner
-    state=directory
+  file: 
+    path: ~/.config/karabiner
+    state: directory
 
 - name: setup karabiner-elements config
-  copy: >-
-    src=karabiner.json
-    dest=~/.config/karabiner/karabiner.json
+  copy: 
+    src: karabiner.json
+    dest: ~/.config/karabiner/karabiner.json

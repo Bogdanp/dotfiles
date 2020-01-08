@@ -1,62 +1,55 @@
 ---
-- name: add homebrew taps
-  homebrew_tap: >
-    name={{item}}
-  with_items:
-    - fisherman/tap
-
 - name: install homebrew packages
-  homebrew: >
-    name={{item}}
-    state=present
-  with_items:
-    - ack
-    - cloc
-    - coreutils
-    - curl
-    - dnsmasq
-    - emacs
-    - fish
-    - fisherman
-    - git
-    - gpg
-    - graphviz
-    - heroku
-    - hledger
-    - htop
-    - hugo
-    - ispell
-    - isync
-    - jq
-    - libmemcached
-    - memcached
-    - mercurial
-    - msmtp
-    - mysql
-    - par
-    - postgresql
-    - prometheus
-    - readline
-    - redis
-    - rlwrap
-    - tarsnap
-    - telnet
-    - terminal-notifier
-    - the_silver_searcher
-    - tmux
-    - tree
-    - vim
-    - watch
-    - watchman
-    - ykman
+  homebrew:
+    name:
+      - ack
+      - carthage
+      - cloc
+      - coreutils
+      - curl
+      - dnsmasq
+      - emacs
+      - fish
+      - git
+      - gpg
+      - graphviz
+      - hledger
+      - htop
+      - hugo
+      - ispell
+      - isync
+      - jq
+      - libmemcached
+      - memcached
+      - mercurial
+      - msmtp
+      - mysql
+      - par
+      - pinentry-mac
+      - postgresql
+      - prometheus
+      - readline
+      - redis
+      - rlwrap
+      - tarsnap
+      - telnet
+      - terminal-notifier
+      - the_silver_searcher
+      - tmux
+      - tree
+      - vim
+      - watch
+      - watchman
+      - ykman
+    state: present
 
 - name: install mu with emacs support
-  homebrew: >-
-    name=mu
-    state=present
-    install_options=with-emacs
+  homebrew:
+    name: mu
+    state: present
+    install_options: HEAD
 
 - name: install reattach-to-user-namespace from homebrew
-  homebrew: >-
-    name=reattach-to-user-namespace
-    install_options=wrap-pbcopy-and-pbpaste
+  homebrew:
+    name: reattach-to-user-namespace
+    install_options: HEAD

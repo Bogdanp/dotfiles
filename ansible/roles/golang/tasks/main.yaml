@@ -1,10 +1,8 @@
 ---
 - name: install golang packages
-  homebrew: >
-    name={{item}}
-    state=present
-  with_items:
-    - go
+  homebrew:
+    name: go
+    state: present
 
 - name: setup golang paths
   file: path={{sandbox_path}}{{item}} state=directory

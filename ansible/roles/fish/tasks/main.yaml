@@ -40,7 +40,6 @@
     - {src: "/fish/functions/backup.fish", dest: "~/.config/fish/functions/backup.fish"}
     - {src: "/fish/functions/docker-cleanup.fish", dest: "~/.config/fish/functions/docker-cleanup.fish"}
     - {src: "/fish/functions/ec.fish", dest: "~/.config/fish/functions/ec.fish"}
-    - {src: "/fish/functions/ef.fish", dest: "~/.config/fish/functions/ef.fish"}
     - {src: "/fish/functions/fish_greeting.fish", dest: "~/.config/fish/functions/fish_greeting.fish"}
     - {src: "/fish/functions/fish_prompt.fish", dest: "~/.config/fish/functions/fish_prompt.fish"}
     - {src: "/fish/functions/forward-plex.fish", dest: "~/.config/fish/functions/forward-plex.fish"}
@@ -53,8 +52,9 @@
     - {src: "/fish/functions/vf-cleanup.fish", dest: "~/.config/fish/functions/vf-cleanup.fish"}
     - {src: "/fish/functions/workon.fish", dest: "~/.config/fish/functions/workon.fish"}
     - {src: "/DefaultKeyBinding.dict", dest: "~/Library/KeyBindings/DefaultKeyBinding.dict" }
-    - {src: "/amethyst", dest: "~/.amethyst" }
+    - {src: "/amethystrc", dest: "~/.amethyst" }
     - {src: "/bashrc", dest: "~/.bashrc"}
+    - {src: "/gpg-agent.conf", dest: "~/.gnupg/gpg-agent.conf"}
     - {src: "/hgignore", dest: "~/.hgignore"}
     - {src: "/hgrc", dest: "~/.hgrc"}
     - {src: "/mbsyncrc", dest: "~/.mbsyncrc"}

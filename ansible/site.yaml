@@ -15,10 +15,6 @@
     - ruby
 
   pre_tasks:
-    - name: accept xcode license
-      shell: xcodebuild -license accept
-      become: yes
-
     - name: install command line tools
       shell: xcode-select --install || true
 

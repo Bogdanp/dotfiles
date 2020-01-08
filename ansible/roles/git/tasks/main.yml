@@ -23,6 +23,7 @@
 
     - {name: "core.editor", value: "vim"}
     - {name: "commit.gpgsign", value: "true"}
+    - {name: "user.signingkey", value: "273EB6E71D94101FF2EACFB34227ABAD6F9D03D5"}
 
     - {name: "user.name", value: "Bogdan Popa"}
-    - {name: "user.email", value: "popa.bogdanp@gmail.com"}
+    - {name: "user.email", value: "bogdan@defn.io"}
