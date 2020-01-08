@@ -22,7 +22,7 @@ function workon
         end
 
         if test -f ".nvmrc"
-            nvm use
+            nvm use (cat .nvmrc)
         end
 
         tmux rename-window "$PROJECT"
