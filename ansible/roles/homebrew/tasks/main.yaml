@@ -1,8 +1,16 @@
 ---
+- name: setup homebrew taps
+  homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - denji/nginx
+
 - name: install homebrew packages
   homebrew:
     name:
       - ack
+      - argon2
       - carthage
       - cloc
       - coreutils
@@ -25,6 +33,7 @@
       - mercurial
       - msmtp
       - mysql
+      - nginx-full
       - par
       - pinentry-mac
       - postgresql
