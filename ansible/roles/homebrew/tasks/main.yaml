@@ -33,7 +33,6 @@
       - mercurial
       - msmtp
       - mysql
-      - nginx-full
       - par
       - pinentry-mac
       - postgresql
@@ -52,6 +51,12 @@
       - watchman
       - ykman
     state: present
+
+- name: install nginx with image-filter
+  homebrew:
+    name: nginx-full
+    state: present
+    install_options: with-http2, with-image-filter, with-secure-link
 
 - name: install mu with emacs support
   homebrew:
