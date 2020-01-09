@@ -21,10 +21,12 @@
       - git
       - git-lfs
       - gpg
+      - graphicsmagick
       - graphviz
       - hledger
       - htop
       - hugo
+      - imagemagick
       - ispell
       - isync
       - jq
