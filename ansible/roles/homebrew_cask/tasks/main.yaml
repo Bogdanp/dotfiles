@@ -6,6 +6,7 @@
       - amethyst
       - dash
       - docker
+      - emacs
       - firefox
       - java
       - karabiner-elements
