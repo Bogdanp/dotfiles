@@ -51,6 +51,7 @@
       - vim
       - watch
       - watchman
+      - xctool
       - ykman
     state: present
 
