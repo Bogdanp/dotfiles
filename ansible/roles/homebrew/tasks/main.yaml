@@ -39,6 +39,7 @@
       - pinentry-mac
       - postgresql
       - prometheus
+      - rabbitmq
       - readline
       - redis
       - rlwrap
@@ -48,6 +49,7 @@
       - the_silver_searcher
       - tmux
       - tree
+      - vegeta
       - vim
       - watch
       - watchman
