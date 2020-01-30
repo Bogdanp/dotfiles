@@ -17,6 +17,7 @@
       - curl
       - dnsmasq
       - emacs
+      - ffmpeg
       - fish
       - git
       - git-lfs
