@@ -5,6 +5,7 @@
     state: present
   with_items:
     - denji/nginx
+    - railwaycat/emacsmacport
 
 - name: install homebrew packages
   homebrew:
@@ -16,7 +17,7 @@
       - coreutils
       - curl
       - dnsmasq
-      - emacs
+      - emacs-mac
       - ffmpeg
       - fish
       - git
