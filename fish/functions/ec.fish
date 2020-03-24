@@ -1,3 +1,3 @@
 function ec
-    "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient" -n "$argv"
+    "/usr/local/opt/emacs-mac/bin/emacsclient" -n "$argv"
 end
