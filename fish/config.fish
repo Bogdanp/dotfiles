@@ -38,3 +38,10 @@ emit virtualfish_did_setup_plugins
 
 # GPG
 set -xg GPG_TTY (tty)
+
+
+# Theme
+set fish_color_search_match --background='#f5f5f5'
+set fish_pager_color_prefix '#ff0000' --underline
+set fish_pager_color_progress '#ffffff' --background='#ff0000'
+set fish_pager_color_description '#948c94' --background='#ffffff'
