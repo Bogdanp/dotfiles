@@ -1,4 +1,6 @@
 function workon
+    vf deactivate >/dev/null || true
+
     if test (count $argv) -eq 1
         set PROJECT $argv[1]
 
