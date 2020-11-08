@@ -10,6 +10,9 @@ function workon
         else if test -d "$HOME/work/$PROJECT"
             cd "$HOME/work/$PROJECT"
 
+        else if test -d "$HOME/common-lisp/$PROJECT"
+            cd "$HOME/common-lisp/$PROJECT"
+
         else if test -d (find "$HOME/sandbox/golang/src" -type d -name "$PROJECT")
             cd (find "$HOME/sandbox/golang/src" -type d -name "$PROJECT")
 
