@@ -28,14 +28,6 @@ alias w=workon
 set -xg WORKON_HOME $HOME/.virtualenvs
 
 
-# Virtualfish
-#   Inlined output from (python -m virtualfish) for faster startup times:
-set -g VIRTUALFISH_VERSION 2.3.0
-set -g VIRTUALFISH_PYTHON_EXEC /usr/local/opt/python@3.9/bin/python3.9
-source /usr/local/lib/python3.9/site-packages/virtualfish/virtual.fish
-emit virtualfish_did_setup_plugins
-
-
 # GPG
 set -xg GPG_TTY (tty)
 
