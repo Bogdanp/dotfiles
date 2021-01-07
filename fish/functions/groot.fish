@@ -1,3 +1,3 @@
 function groot
-    cd (git rev-parse --show-toplevel || echo -n ".")
+    cd (git rev-parse --show-toplevel; or echo -n ".")
 end
