@@ -8,7 +8,6 @@
       - docker
       - firefox
       - java
-      - karabiner-elements
       - mactex
       - ngrok
       - opensc
@@ -21,13 +20,3 @@
       - virtualbox
       - vlc
     state: present
-
-- name: ensure karabiner-elements config dir exists
-  file:
-    path: ~/.config/karabiner
-    state: directory
-
-- name: setup karabiner-elements config
-  copy:
-    src: karabiner.json
-    dest: ~/.config/karabiner/karabiner.json
