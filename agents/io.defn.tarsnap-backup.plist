@@ -5,7 +5,7 @@
     <key>Label</key>
     <string>io.defn.tarsnap-backup</string>
     <key>Program</key>
-    <string>/usr/local/bin/tarsnap-perform-backup</string>
+    <string>/opt/local/bin/tarsnap-perform-backup</string>
     <key>StartCalendarInterval</key>
     <dict>
       <key>Hour</key>
@@ -14,8 +14,8 @@
       <integer>0</integer>
     </dict>
     <key>StandardErrorPath</key>
-    <string>/usr/local/var/log/tarsnap.log</string>
+    <string>/opt/local/var/log/tarsnap.log</string>
     <key>StandardOutPath</key>
-    <string>/usr/local/var/log/tarsnap.log</string>
+    <string>/opt/local/var/log/tarsnap.log</string>
   </dict>
 </plist>

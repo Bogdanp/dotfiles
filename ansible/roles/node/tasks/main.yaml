@@ -1,7 +1,0 @@
----
-- name: install node packages
-  homebrew:
-    name:
-      - libsass
-      - node
-    state: present

@@ -1,0 +1,34 @@
+[alias]
+	a = add
+	ap = add -p
+	b = !git for-each-ref --sort=\"-authordate\" --format=\"%(color:yellow)%(authordate)%09%(color:red)%(objectname:short)%09%(color:blue)%(refname)\" refs/heads | sed -e \"s-refs/heads/--\"
+	c = commit
+	cam = commit -am
+	co = checkout
+	d = diff
+	dc = diff --cached
+	ds = diff --stat
+	f = fetch
+	l = log --pretty=format:\"%C(yellow)%h %ad%C(red)%d %C(reset)%s%C(blue) [%cn]\" --decorate --date=short
+	la = !git config -l | grep alias | cut -c 7-
+	lol = log --oneline --graph --decorate
+	po = push -u origin
+	s = status -s
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true
+[user]
+	name = Bogdan Popa
+	email = bogdan@defn.io
+	signingkey = 273EB6E71D94101FF2EACFB34227ABAD6F9D03D5
+[gpg]
+	program = gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false

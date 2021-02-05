@@ -1,6 +1,0 @@
----
-- name: install ruby packages
-  homebrew:
-    name:
-       - ruby
-    state: present

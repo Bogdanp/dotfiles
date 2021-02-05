@@ -3,9 +3,7 @@
 ## Setup
 
 1. `git submodule update --init`
-1. `pip3 install --user ansible`
-1. `ln -s ~/Library/Python/3.7/bin/ansible* /usr/local/bin/`
-1. `cd ansible && make`
+1. `./bootstrap -d`
 
 ## How Stuff Works
 
