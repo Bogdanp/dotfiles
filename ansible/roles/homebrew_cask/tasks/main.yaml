@@ -9,7 +9,6 @@
       - firefox
       - java
       - mactex
-      - ngrok
       - opensc
       - screenflow
       - skype
@@ -17,6 +16,5 @@
       - steam
       - telegram
       - transmission
-      - virtualbox
       - vlc
     state: present

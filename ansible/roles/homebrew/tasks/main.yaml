@@ -12,7 +12,6 @@
     name:
       - ack
       - argon2
-      - carthage
       - cloc
       - coreutils
       - curl
@@ -23,9 +22,7 @@
       - git
       - git-lfs
       - gpg
-      - graphicsmagick
       - graphviz
-      - hledger
       - htop
       - hugo
       - imagemagick
@@ -34,20 +31,16 @@
       - jq
       - libmemcached
       - memcached
-      - mercurial
       - msmtp
-      - mysql
       - par
       - pinentry-mac
       - postgresql
-      - prometheus
       - rabbitmq
       - readline
       - redis
       - rlwrap
       - tarsnap
       - telnet
-      - terminal-notifier
       - the_silver_searcher
       - tmux
       - tree
