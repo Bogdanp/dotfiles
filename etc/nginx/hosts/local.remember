@@ -1,0 +1,8 @@
+server {
+    listen 80;
+    server_name local.remember;
+
+    location / {
+        root /opt/local/var/remember-www;
+    }
+}

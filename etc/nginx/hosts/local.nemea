@@ -1,0 +1,40 @@
+upstream nemea_backend {
+    server 127.0.0.1:4200;
+
+    keepalive 128;
+}
+
+server {
+    listen      80;
+    server_name local.nemea;
+    return 302 https://$server_name$request_uri;
+}
+
+server {
+    listen      443 ssl http2;
+    server_name local.nemea;
+
+    ssl_certificate     /etc/ssl/certs/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+
+    location / {
+        client_max_body_size 20M;
+
+        proxy_intercept_errors on;
+        proxy_pass             http://nemea_backend;
+        proxy_http_version     1.1;
+        proxy_connect_timeout  60s;
+        proxy_send_timeout     60s;
+        proxy_read_timeout     60s;
+        proxy_set_header       Connection      "";
+        proxy_set_header       Host            $host;
+        proxy_set_header       X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header       X-Real-IP       $remote_addr;
+
+        error_page 502 = /502.html;
+    }
+
+    location = /502.html {
+        root /opt/local/var/www;
+    }
+}

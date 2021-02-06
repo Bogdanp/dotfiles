@@ -1,0 +1,86 @@
+proxy_cache_path /tmp/nginx-matchacha-thumbnails levels=1:2 keys_zone=matchacha_thumbnail_cache:16M inactive=60d max_size=512M;
+
+upstream matchacha_backend {
+    server 127.0.0.1:8000;
+
+    keepalive 128;
+}
+
+server {
+    listen      80;
+    server_name local.matchacha;
+    return 302 https://$server_name$request_uri;
+}
+
+server {
+    listen      10993;
+    server_name 127.0.0.1;
+
+    root /Users/bogdan/work/matchacha/uploads;
+
+    location / {
+        image_filter resize $arg_w $arg_h;
+        image_filter_buffer 50M;
+        image_filter_interlace on;
+        image_filter_jpeg_quality 90;
+    }
+}
+
+server {
+    listen      443 ssl http2;
+    server_name local.matchacha;
+
+    ssl_certificate     /etc/ssl/certs/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+
+    gzip on;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_types text/plain text/css text/xml application/json application/javascript application/xml+rss application/atom+xml image/svg+xml;
+
+    location ~ ^/t/([\d-]+)/([\d-]+)/(.+) {
+        secure_link     $arg_key;
+        secure_link_md5 "$uri 2302c6206d4fe7e70a9f031688bf8501c834d138";
+        if ($secure_link = "") {
+            return 404;
+        }
+
+        proxy_pass            http://127.0.0.1:10993/$3?w=$1&h=$2;
+        proxy_cache           matchacha_thumbnail_cache;
+        proxy_cache_key       "$host$document_uri$is_args$arg_key";
+        proxy_cache_lock      on;
+        proxy_cache_valid     30d;
+        proxy_cache_valid     any 15s;
+        proxy_cache_use_stale error timeout invalid_header updating;
+        proxy_http_version    1.1;
+        expires               30d;
+    }
+
+    location / {
+        client_max_body_size 20M;
+
+        add_header "Content-Security-Policy" "default-src 'none'; base-uri 'none'; connect-src 'self' https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://api.stripe.com; script-src blob: https://local.matchacha https://matchacha.nemea.co https://js.stripe.com; img-src blob: data: https://local.matchacha https://scontent.cdninstagram.com https://matchacha.nemea.co; media-src https://local.matchacha; style-src 'unsafe-inline' https://local.matchacha; form-action 'self'; frame-src 'self' https://*.youtube.com https://www.youtube-nocookie.com https://js.stripe.com https://hooks.stripe.com; frame-ancestors 'none';" always;
+        add_header "Referrer-Policy" "no-referrer" always;
+        add_header "X-Content-Type-Options" "nosniff" always;
+        add_header "X-Frame-Options" "DENY" always;
+        add_header "X-XSS-Protection" "1; mode=block" always;
+
+        proxy_intercept_errors on;
+        proxy_pass             http://matchacha_backend;
+        proxy_http_version     1.1;
+        proxy_connect_timeout  60s;
+        proxy_send_timeout     60s;
+        proxy_read_timeout     60s;
+        proxy_set_header       Connection      "";
+        proxy_set_header       Host            $host;
+        proxy_set_header       X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header       X-Real-IP       $remote_addr;
+
+        error_page 502 = /502.html;
+    }
+
+    location = /502.html {
+        root /opt/local/var/www;
+    }
+}

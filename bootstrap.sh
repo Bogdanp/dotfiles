@@ -188,3 +188,17 @@ if [ "$DRY_RUN" -eq 0 ]; then
 fi
 
 install_agent "io.defn.tarsnap-backup"
+
+
+## Nginx
+
+log "Linking /etc/hosts..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo ln -sf "$ROOT/etc/hosts" "/etc/hosts"
+fi
+
+log "Linking Nginx configs..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo ln -sf "$ROOT/etc/nginx/nginx.conf" "/opt/local/etc/nginx/nginx.conf"
+    sudo ln -sf "$ROOT/etc/nginx/hosts" "/opt/local/etc/nginx/hosts"
+fi
