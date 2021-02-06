@@ -29,5 +29,5 @@ python.default_version  38
 notes "
 To add VirtualFish to your config, run:
 
-  vf install
+  vf-3.8 install
 "
