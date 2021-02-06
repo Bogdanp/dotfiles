@@ -145,6 +145,22 @@ link "DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/"
 
 ## Emacs
 
+if [ ! -d "$HOME/.emacs.d" ]; then
+    log "Cloning .emacs.d..."
+    if [ "$DRY_RUN" -eq 0 ]; then
+        git clone https://github.com/Bogdanp/.emacs.d "$HOME/.emacs.d"
+
+        log "Loading Emacs submodules..."
+        (cd "$HOME/.emacs.d" && \
+             git submodule update --init)
+
+        log "Fixing up .emacs.d origin repo..."
+        (cd "$HOME/.emacs.d" && \
+             git remote rm origin && \
+             git remote add origin git@github.com:Bogdanp/.emacs.d)
+    fi
+fi
+
 
 ## Git
 
