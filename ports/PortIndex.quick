@@ -6,5 +6,6 @@ py37-google-auth 2444
 py38-google-auth 3053
 py39-google-auth 3662
 py-virtualfish2 4271
-py37-virtualfish2 4754
-py38-virtualfish2 5185
+py37-virtualfish2 4770
+py38-virtualfish2 5199
+py39-virtualfish2 5628
