@@ -201,3 +201,8 @@ if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf "$ROOT/etc/nginx/nginx.conf" "/opt/local/etc/nginx/nginx.conf"
     sudo ln -sf "$ROOT/etc/nginx/hosts" "/opt/local/etc/nginx/hosts"
 fi
+
+log "Loading Nginx agent..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo port load nginx
+fi
