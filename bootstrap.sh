@@ -257,6 +257,11 @@ if [ ! -d "/opt/local/var/db/postgresql13/defaultdb" ]; then
     fi
 fi
 
+log "Selecting PostgreSQL version..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo port select postgresql postgresql13
+fi
+
 
 ## MacPorts
 
