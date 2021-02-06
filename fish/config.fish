@@ -4,7 +4,8 @@ set -xg LANG en_US.UTF-8
 
 
 # Paths
-set -xg PATH /opt/local/bin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $HOME/bin $PATH
+set -xg PATH /opt/local/bin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
+set -xg PATH $PATH $HOME/bin $HOME/Library/Python/3.8/bin
 set -xg MANPATH /opt/local/man /usr/share/man /usr/local/share/man
 
 
