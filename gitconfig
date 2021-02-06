@@ -15,7 +15,7 @@
 	po = push -u origin
 	s = status -s
 [core]
-	editor = vim
+	editor = emacsclient
 	excludesfile = ~/.gitignore
 [commit]
 	gpgsign = true
