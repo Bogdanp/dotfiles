@@ -247,3 +247,12 @@ if [ ! -d "/opt/local/var/db/postgresql13/defaultdb" ]; then
         sudo port load postgresql13-server
     fi
 fi
+
+
+## MacPorts
+
+log "Linking MacPorts sources..."
+render "etc/macports/sources.conf.tpl" '$HOME'
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo ln -sf "$ROOT/etc/macports/sources.conf" "/opt/local/etc/macports/sources.conf"
+fi
