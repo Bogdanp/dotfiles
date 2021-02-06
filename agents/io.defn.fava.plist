@@ -6,16 +6,16 @@
     <string>io.defn.fava</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/local/bin/fava</string>
+      <string>/opt/local/bin/fava</string>
       <string>cleartype.beancount</string>
       <string>personal.beancount</string>
     </array>
     <key>WorkingDirectory</key>
     <string>/Users/bogdan/sandbox/accounting</string>
     <key>StandardErrorPath</key>
-    <string>/usr/local/var/log/fava.log</string>
+    <string>/opt/local/var/log/fava.log</string>
     <key>StandardOutPath</key>
-    <string>/usr/local/var/log/fava.log</string>
+    <string>/opt/local/var/log/fava.log</string>
     <key>RunAtLoad</key>
     <true/>
   </dict>
