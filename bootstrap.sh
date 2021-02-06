@@ -192,6 +192,7 @@ if [ ! -f "$HOME/bin/emacsclient" ]; then
     ln -sf "/Applications/MacPorts/EmacsMac.app/Contents/MacOS/bin/emacsclient" "$HOME/bin/emacsclient"
 fi
 
+
 ## Git
 
 log "Linking gitignore and gitconfig..."
