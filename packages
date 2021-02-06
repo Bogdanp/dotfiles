@@ -22,7 +22,7 @@ jq
 libmemcached
 memcached
 msmtp
-mu
+mu +emacs
 nginx +http2 +image_filter +secure_link
 nodejs15
 par
