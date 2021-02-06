@@ -259,3 +259,17 @@ render "etc/macports/sources.conf" '$HOME'
 if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf "$ROOT/etc/macports/sources.conf" "/opt/local/etc/macports/sources.conf"
 fi
+
+
+## Python
+
+log "Selecting Python version..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo port select python python38
+    sudo port select pip pip38
+fi
+
+log "Installing pip packages..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    pip install virtualfish
+fi
