@@ -276,6 +276,13 @@ if [ "$DRY_RUN" -eq 0 ]; then
 fi
 
 log "Installing pip packages..."
-if [ "$DRY_RUN" -eq 0 ]; then
-    pip install virtualfish
-fi
+while IFS= read -r PKG; do
+    if ! grep -q "$PKG" "$ROOT/workspace/installed-pip"; then
+        log "Installing $PKG (pip)..."
+        if [ "$DRY_RUN" -eq 0 ]; then
+            if ! pip install "$PKG" 2>"$ROOT/workspace/errors.$PKG"; then
+                echo "$PKG" >> "$ROOT/workspace/failures-pip"
+            fi
+        fi
+    fi
+done < "$ROOT/packages-pip"
