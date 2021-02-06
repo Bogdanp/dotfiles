@@ -25,6 +25,7 @@ msmtp
 mu +emacs
 nginx +http2 +image_filter +secure_link
 nodejs15
+npm6
 opensc +p11kit
 par
 pinentry-mac
