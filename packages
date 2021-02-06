@@ -2,6 +2,7 @@ ImageMagick
 ack
 argon2
 cloc
+coreutils
 curl
 emacs-mac-app
 fava
@@ -43,5 +44,4 @@ vegeta
 vim
 watch
 watchman
-xctool
 yubikey-manager
