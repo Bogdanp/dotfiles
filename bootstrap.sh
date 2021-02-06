@@ -206,3 +206,20 @@ log "Loading Nginx agent..."
 if [ "$DRY_RUN" -eq 0 ]; then
     sudo port load nginx
 fi
+
+
+## PostgreSQL
+
+if [ ! -d "/opt/local/var/db/postgresql13/defaultdb" ]; then
+    log "Setting up PostgreSQL database..."
+    if [ "$DRY_RUN" -eq 0 ]; then
+        sudo mkdir -p /opt/local/var/db/postgresql13/defaultdb
+        sudo chown postgres:postgres /opt/local/var/db/postgresql13/defaultdb
+        sudo su postgres -c 'cd /opt/local/var/db/postgresql13 && /opt/local/lib/postgresql13/bin/initdb -D /opt/local/var/db/postgresql13/defaultdb'
+    fi
+
+    log "Loading PostgreSQL agent..."
+    if [ "$DRY_RUN" -eq 0 ]; then
+        sudo port load postgresql13-server
+    fi
+fi
