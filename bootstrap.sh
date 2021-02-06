@@ -78,11 +78,9 @@ remove() {
         exit 1
     fi
 
-    if [ -f "$1" ]; then
-        log "Removing '$1'..."
-        if [ "$DRY_RUN" -eq 0 ]; then
-            rm -rf "$1"
-        fi
+    log "Removing '$1'..."
+    if [ "$DRY_RUN" -eq 0 ]; then
+        rm -rf "$1"
     fi
 }
 
@@ -147,12 +145,12 @@ remove "$HOME/.config/fish"
 remove "$HOME/.tmux"
 link "amethystrc" "$HOME/.amethyst"
 link "bashrc" "$HOME/.bashrc"
-link "fish/" "$HOME/.config/fish"
+link "fish" "$HOME/.config/fish"
 link "gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 link "mbsyncrc" "$HOME/.mbsyncrc"
 link "msmtprc" "$HOME/.msmtprc"
 link "psqlrc" "$HOME/.psqlrc"
-link "tmux/" "$HOME/.tmux"
+link "tmux" "$HOME/.tmux"
 link "tmux.conf" "$HOME/.tmux.conf"
 link "vimrc" "$HOME/.vimrc"
 
@@ -223,7 +221,7 @@ fi
 log "Linking Nginx configs..."
 if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf "$ROOT/etc/nginx/nginx.conf" "/opt/local/etc/nginx/nginx.conf"
-    sudo ln -sf "$ROOT/etc/nginx/hosts/" "/opt/local/etc/nginx/hosts"
+    sudo ln -sf "$ROOT/etc/nginx/hosts" "/opt/local/etc/nginx/hosts"
 fi
 
 log "Loading Nginx agent..."
