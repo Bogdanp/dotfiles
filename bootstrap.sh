@@ -223,9 +223,9 @@ install_agent "io.defn.tarsnap-backup"
 
 ## Nginx
 
-log "Linking /etc/hosts..."
+log "Copying /etc/hosts..."
 if [ "$DRY_RUN" -eq 0 ]; then
-    sudo ln -sf "$ROOT/etc/hosts" "/etc/hosts"
+    sudo cp "$ROOT/etc/hosts" "/etc/hosts"
 fi
 
 log "Linking Nginx configs..."
