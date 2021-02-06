@@ -26,12 +26,6 @@ function workon
             vf activate "$PROJECT"
         end
 
-        if test -f ".nvmrc"
-            nvm use (cat .nvmrc)
-        else if test -f "package.json"
-            nvm use 12
-        end
-
         tmux rename-window "$PROJECT"
     else;
         echo "usage: workon PROJECT"
