@@ -1,0 +1,25 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem              1.0
+PortGroup               python 1.0
+PortGroup               github 1.0
+
+github.setup            adambrenecki virtualfish 2.5.1
+revision                0
+name                    py-virtualfish2
+platforms               darwin
+supported_archs         noarch
+license                 MIT
+maintainers             nomaintainer
+
+description             Fish shell tool for managing Python virtual environments
+long_description        {VirtualFish is a Python virtual environment manager for the Fish shell.}
+
+checksums               rmd160  dc2d93d778782401ea60a7696a0f7e908c441ea5 \
+                        sha256  f27a84317ee5f1eaa5a231ebb014cf9d0bb8996dfcf3fb1b604a7e23c28f6e71 \
+                        size    153600
+
+python.versions         35 36 37 38
+
+notes "
+    Run `vf install` to add virtualfish to your config."
