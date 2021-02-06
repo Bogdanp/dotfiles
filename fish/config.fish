@@ -3,17 +3,9 @@ set -xg LC_ALL en_US.UTF-8
 set -xg LANG en_US.UTF-8
 
 
-# Path
-set -xg PATH /opt/local/bin $PATH
-set -xg PATH /usr/local/sbin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
-set -xg PATH $PATH "/usr/local/opt/go@1.13/bin"
-set -xg PATH $PATH $HOME/.local/bin $HOME/bin
-set -xg PATH $PATH $HOME/.config/yarn/global/node_modules/.bin
-set -xg PATH $PATH $HOME/.gem/ruby/2.6.0/bin
-set -xg PATH $PATH $HOME/sandbox/golang/bin
-set -xg PATH $PATH $HOME/Library/Racket/7.5/bin
-set -xg MANPATH /usr/share/man /usr/local/share/man /opt/X11/share/man /usr/local/MacGPG2/share/man /Library/TeX/Distributions/.DefaultTeX/Contents/Man
-set -xg GOPATH $HOME/sandbox/golang
+# Paths
+set -xg PATH /opt/local/bin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $HOME/bin $PATH
+set -xg MANPATH /opt/local/man /usr/share/man /usr/local/share/man
 
 
 # Env
