@@ -14,8 +14,8 @@
       <integer>0</integer>
     </dict>
     <key>StandardErrorPath</key>
-    <string>/opt/local/var/log/tarsnap.log</string>
+    <string>$HOME/.local/var/log/tarsnap.log</string>
     <key>StandardOutPath</key>
-    <string>/opt/local/var/log/tarsnap.log</string>
+    <string>$HOME/.local/var/log/tarsnap.log</string>
   </dict>
 </plist>

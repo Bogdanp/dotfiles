@@ -11,11 +11,11 @@
       <string>personal.beancount</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/bogdan/sandbox/accounting</string>
+    <string>$HOME/sandbox/accounting</string>
     <key>StandardErrorPath</key>
-    <string>/opt/local/var/log/fava.log</string>
+    <string>$HOME/.local/var/log/fava.log</string>
     <key>StandardOutPath</key>
-    <string>/opt/local/var/log/fava.log</string>
+    <string>$HOME/.local/var/log/fava.log</string>
     <key>RunAtLoad</key>
     <true/>
   </dict>

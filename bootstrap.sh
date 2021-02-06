@@ -40,6 +40,27 @@ load_agent() {
     fi
 }
 
+render() {
+    if [ "$#" -lt 1 ]; then
+        echo "usage: render NAME [VAR ...]"
+        exit 1
+    fi
+
+    NAME="$1"
+    SRC="$ROOT/$NAME.tpl"
+    DST="$ROOT/$NAME"
+    if [ ! -f "$SRC" ]; then
+        echo "error: $SRC does not exist"
+        exit 1
+    fi
+
+    shift
+    log "Templating '$SRC' to '$DST' with vars '$*'..."
+    if [ "$DRY_RUN" -eq 0 ]; then
+        envsubst "$@" < "$SRC" > "$DST"
+    fi
+}
+
 install_agent() {
     if [ "$#" -ne 1 ]; then
         echo "usage: install_agent NAME"
@@ -121,6 +142,7 @@ fi
 
 log "Linking dotfiles..."
 mkdir -p "$HOME/.gnupg"
+mkdir -p "$HOME/.local"
 remove "$HOME/.config/fish"
 remove "$HOME/.tmux"
 link "amethystrc" "$HOME/.amethyst"
@@ -171,6 +193,7 @@ link gitconfig ~/.gitconfig
 ## Fava
 
 log "Installing fava launch agent..."
+render "agents/io.defn.fava.plist" "HOME"
 install_agent "io.defn.fava"
 
 
@@ -186,6 +209,7 @@ if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf "$ROOT/bin/tarsnap-perform-backup" "/opt/local/bin/"
 fi
 
+render "agents/io.defn.tarsnap-backup.plist" "HOME"
 install_agent "io.defn.tarsnap-backup"
 
 
