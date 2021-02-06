@@ -135,7 +135,13 @@ done < "$ROOT/packages"
 
 log "Changing shell to Fish..."
 if [ "$DRY_RUN" -eq 0 ]; then
+    if ! grep -q "/opt/local/bin/fish" "/etc/shells"; then
+        log "Adding /opt/local/bin/fish to /etc/shells..."
+        echo "/opt/local/bin/fish" | sudo tee -a "/etc/shells"
+    fi
+
     sudo chsh -s /opt/local/bin/fish
+    chsh -s /opt/local/bin/fish
 fi
 
 log "Linking dotfiles..."
