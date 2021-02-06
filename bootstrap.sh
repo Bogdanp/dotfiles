@@ -124,6 +124,7 @@ while IFS= read -r PKG_AND_OPTS; do
         log "Installing $PKG..."
         if [ "$DRY_RUN" -eq 0 ]; then
             if ! sudo port install $PKG_AND_OPTS 2>"$ROOT/workspace/errors.$PKG"; then
+                log "Failed to install $PKG, see '$ROOT/workspace/errors.$PKG' for details..."
                 echo "$PKG" >> "$ROOT/workspace/failures"
             fi
         fi
@@ -288,6 +289,7 @@ while IFS= read -r PKG; do
         log "Installing $PKG (pip)..."
         if [ "$DRY_RUN" -eq 0 ]; then
             if ! pip install "$PKG" 2>"$ROOT/workspace/errors.$PKG"; then
+                log "Failed to install $PKG, see '$ROOT/workspace/errors.$PKG' for details..."
                 echo "$PKG" >> "$ROOT/workspace/failures-pip"
             fi
         fi
