@@ -220,7 +220,7 @@ fi
 
 log "Linking Nginx configs..."
 if [ "$DRY_RUN" -eq 0 ]; then
-    remove "/opt/local/etc/nginx/hosts"
+    sudo rm -rf "/opt/local/etc/nginx/hosts"
     sudo ln -sf "$ROOT/etc/nginx/nginx.conf" "/opt/local/etc/nginx/nginx.conf"
     sudo ln -sf "$ROOT/etc/nginx/hosts" "/opt/local/etc/nginx/hosts"
 fi
