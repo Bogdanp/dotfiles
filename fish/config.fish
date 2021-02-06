@@ -9,7 +9,7 @@ set -xg MANPATH /opt/local/man /usr/share/man /usr/local/share/man
 
 
 # Env
-set -xg EDITOR ec
+set -xg EDITOR emacsclient
 
 
 # Aliases
