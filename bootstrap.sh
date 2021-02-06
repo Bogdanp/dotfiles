@@ -188,6 +188,7 @@ fi
 
 if [ ! -f "$HOME/bin/emacsclient" ]; then
     log "Linking emacslient..."
+    mkdir -p ~/bin
     ln -sf "/Applications/MacPorts/EmacsMac.app/Contents/MacOS/bin/emacsclient" "$HOME/bin/emacsclient"
 fi
 
