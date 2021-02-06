@@ -27,6 +27,7 @@ nodejs15
 par
 pinentry-mac
 postgresql13-server
+py-virtualfish
 py38-beancount
 python38
 rabbitmq-server
