@@ -180,6 +180,10 @@ if [ ! -d "$HOME/.emacs.d" ]; then
     fi
 fi
 
+if [ ! -f "$HOME/bin/emacsclient" ]; then
+    log "Linking emacslient..."
+    ln -sf "/Applications/MacPorts/EmacsMac.app/Contents/MacOS/bin/emacsclient" "$HOME/bin/emacsclient"
+fi
 
 ## Git
 
