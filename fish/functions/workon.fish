@@ -1,5 +1,5 @@
 function workon
-    vf-3.8 deactivate >/dev/null || true
+    vf deactivate >/dev/null || true
 
     if test (count $argv) -eq 1
         set PROJECT $argv[1]
@@ -23,7 +23,7 @@ function workon
         end
 
         if test -d "$HOME/.virtualenvs/$PROJECT"
-            vf-3.8 activate "$PROJECT"
+            vf activate "$PROJECT"
         end
 
         if test -f ".nvmrc"
