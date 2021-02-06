@@ -193,7 +193,7 @@ link gitconfig ~/.gitconfig
 ## Fava
 
 log "Installing fava launch agent..."
-render "agents/io.defn.fava.plist" "HOME"
+render "agents/io.defn.fava.plist" '$HOME'
 install_agent "io.defn.fava"
 
 
@@ -209,7 +209,7 @@ if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf "$ROOT/bin/tarsnap-perform-backup" "/opt/local/bin/"
 fi
 
-render "agents/io.defn.tarsnap-backup.plist" "HOME"
+render "agents/io.defn.tarsnap-backup.plist" '$HOME'
 install_agent "io.defn.tarsnap-backup"
 
 
