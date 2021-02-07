@@ -288,10 +288,18 @@ while IFS= read -r PKG; do
     if ! grep -q "$PKG" "$ROOT/workspace/installed-pip"; then
         log "Installing $PKG (pip)..."
         if [ "$DRY_RUN" -eq 0 ]; then
-            if ! pip install "$PKG" 2>"$ROOT/workspace/errors.$PKG"; then
+            if ! sudo pip install "$PKG" 2>"$ROOT/workspace/errors.$PKG"; then
                 log "Failed to install $PKG, see '$ROOT/workspace/errors.$PKG' for details..."
                 echo "$PKG" >> "$ROOT/workspace/failures-pip"
             fi
         fi
     fi
 done < "$ROOT/packages-pip"
+
+
+## SSL
+
+log "Linking ca-certificates..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo ln -sf /Library/Python/3.8/site-packages/certifi/cacert.pem /etc/ssl/certs/ca-certificates.crt
+fi
