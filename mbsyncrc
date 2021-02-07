@@ -16,38 +16,38 @@ Path ~/Mail/business/
 Inbox ~/Mail/business/inbox
 
 Channel business-inbox
-Master :business-remote:INBOX/
-Slave :business-local:inbox
+Far :business-remote:INBOX/
+Near :business-local:inbox
 Create Both
 Expunge Both
 
 Channel business-archive
-Master :business-remote:Archive
-Slave :business-local:archive
+Far :business-remote:Archive
+Near :business-local:archive
 Create Both
 Expunge Both
 
 Channel business-drafts
-Master :business-remote:Drafts
-Slave :business-local:drafts
+Far :business-remote:Drafts
+Near :business-local:drafts
 Create Both
 Expunge Both
 
 Channel business-sent
-Master :business-remote:Sent
-Slave :business-local:sent
+Far :business-remote:Sent
+Near :business-local:sent
 Create Both
 Expunge Both
 
 Channel business-junk
-Master :business-remote:Spam
-Slave :business-local:junk
+Far :business-remote:Spam
+Near :business-local:junk
 Create Both
 Expunge Both
 
 Channel business-trash
-Master :business-remote:Trash
-Slave :business-local:trash
+Far :business-remote:Trash
+Near :business-local:trash
 Create Both
 Expunge Both
 
@@ -78,38 +78,38 @@ Path ~/Mail/personal/
 Inbox ~/Mail/personal/inbox
 
 Channel personal-inbox
-Master :personal-remote:INBOX/
-Slave :personal-local:inbox
+Far :personal-remote:INBOX/
+Near :personal-local:inbox
 Create Both
 Expunge Both
 
 Channel personal-archive
-Master :personal-remote:Archive
-Slave :personal-local:archive
+Far :personal-remote:Archive
+Near :personal-local:archive
 Create Both
 Expunge Both
 
 Channel personal-drafts
-Master :personal-remote:Drafts
-Slave :personal-local:drafts
+Far :personal-remote:Drafts
+Near :personal-local:drafts
 Create Both
 Expunge Both
 
 Channel personal-sent
-Master :personal-remote:Sent
-Slave :personal-local:sent
+Far :personal-remote:Sent
+Near :personal-local:sent
 Create Both
 Expunge Both
 
 Channel personal-junk
-Master :personal-remote:Spam
-Slave :personal-local:junk
+Far :personal-remote:Spam
+Near :personal-local:junk
 Create Both
 Expunge Both
 
 Channel personal-trash
-Master :personal-remote:Trash
-Slave :personal-local:trash
+Far :personal-remote:Trash
+Near :personal-local:trash
 Create Both
 Expunge Both
 
@@ -140,32 +140,32 @@ Channel personal-trash
 ## Inbox ~/Mail/personal-archive/INBOX
 ##
 ## Channel personal-archive-inbox
-## Master :personal-archive-remote:"INBOX"
-## Slave :personal-archive-local:inbox
+## Far :personal-archive-remote:"INBOX"
+## Near :personal-archive-local:inbox
 ## Create Both
 ## Expunge Both
 ##
 ## Channel personal-archive-archive
-## Master :personal-archive-remote:"[Gmail]/All Mail"
-## Slave :personal-archive-local:archive
+## Far :personal-archive-remote:"[Gmail]/All Mail"
+## Near :personal-archive-local:archive
 ## Create Both
 ## Expunge Both
 ##
 ## Channel personal-archive-sent
-## Master :personal-archive-remote:"[Gmail]/Sent Mail"
-## Slave :personal-archive-local:sent
+## Far :personal-archive-remote:"[Gmail]/Sent Mail"
+## Near :personal-archive-local:sent
 ## Create Both
 ## Expunge Both
 ##
 ## Channel personal-archive-trash
-## Master :personal-archive-remote:"[Gmail]/Trash"
-## Slave :personal-archive-local:trash
+## Far :personal-archive-remote:"[Gmail]/Trash"
+## Near :personal-archive-local:trash
 ## Create Both
 ## Expunge Both
 ##
 ## Channel personal-archive-trash
-## Master :personal-archive-remote:"[Gmail]/Drafts"
-## Slave :personal-archive-local:drafts
+## Far :personal-archive-remote:"[Gmail]/Drafts"
+## Near :personal-archive-local:drafts
 ## Create Both
 ## Expunge Both
 ##
