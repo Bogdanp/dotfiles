@@ -38,6 +38,7 @@ rabbitmq-server
 readline
 redis
 rlwrap
+shellcheck
 tarsnap
 the_silver_searcher
 tmux
