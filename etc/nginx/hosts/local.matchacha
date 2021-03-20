@@ -22,7 +22,7 @@ server {
         image_filter resize $arg_w $arg_h;
         image_filter_buffer 50M;
         image_filter_interlace on;
-        image_filter_jpeg_quality 90;
+        image_filter_jpeg_quality 75;
     }
 }
 
