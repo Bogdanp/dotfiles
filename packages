@@ -1,6 +1,8 @@
 ImageMagick
 ack
 argon2
+autoconf
+automake
 cloc
 coreutils
 curl
