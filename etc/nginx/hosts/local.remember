@@ -3,6 +3,6 @@ server {
     server_name local.remember;
 
     location / {
-        root /opt/local/var/remember-www;
+        root /Users/bogdan/work/remember/website;
     }
 }
