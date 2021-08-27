@@ -195,6 +195,7 @@
   },
   "floating": [
     "com.agilebits.onepassword7",
+    "com.apple.MobileSMS",
     "com.apple.finder",
     "com.apple.systempreferences",
     "com.kapeli.dashdoc",
