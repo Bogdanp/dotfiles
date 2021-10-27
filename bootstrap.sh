@@ -201,6 +201,14 @@ link gitignore ~/.gitignore
 link gitconfig ~/.gitconfig
 
 
+## Yubikey
+
+log "Installing yubikey-agent launch agent..."
+mkdir -p ~/.local/var/run
+render "agents/io.defn.yubikey-agent.plist" '$HOME'
+install_agent "io.defn.yubikey-agent"
+
+
 ## Fava
 
 log "Installing fava launch agent..."
