@@ -10,6 +10,7 @@ set -xg MANPATH /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.plat
 
 
 # Env
+set -xg CLICOLOR x
 set -xg EDITOR emacsclient
 
 
