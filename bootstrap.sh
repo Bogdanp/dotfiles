@@ -232,6 +232,17 @@ render "agents/io.defn.tarsnap-backup.plist" '$HOME'
 install_agent "io.defn.tarsnap-backup"
 
 
+## Notes & accounting agents
+
+log "Installing git-personal launch agent..."
+render "agents/io.defn.git-personal.plist" '$HOME'
+install_agent "io.defn.git-personal"
+
+log "Installing git-accounting launch agent..."
+render "agents/io.defn.git-accounting.plist" '$HOME'
+install_agent "io.defn.git-accounting"
+
+
 ## Nginx
 
 log "Copying /etc/hosts..."
