@@ -1,63 +1,63 @@
 ## business ###################################################################
-IMAPAccount business
-Host imap.fastmail.com
-User bogdan@cleartype.io
-PassCmd "security find-internet-password -s 'imap.fastmail.com' -a 'bogdan@cleartype.io' -w"
-AuthMechs LOGIN
-Port 993
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore business-remote
-Account business
-
-MaildirStore business-local
-Path ~/Mail/business/
-Inbox ~/Mail/business/inbox
-
-Channel business-inbox
-Far :business-remote:INBOX/
-Near :business-local:inbox
-Create Both
-Expunge Both
-
-Channel business-archive
-Far :business-remote:Archive
-Near :business-local:archive
-Create Both
-Expunge Both
-
-Channel business-drafts
-Far :business-remote:Drafts
-Near :business-local:drafts
-Create Both
-Expunge Both
-
-Channel business-sent
-Far :business-remote:Sent
-Near :business-local:sent
-Create Both
-Expunge Both
-
-Channel business-junk
-Far :business-remote:Spam
-Near :business-local:junk
-Create Both
-Expunge Both
-
-Channel business-trash
-Far :business-remote:Trash
-Near :business-local:trash
-Create Both
-Expunge Both
-
-Group business
-Channel business-inbox
-Channel business-archive
-Channel business-drafts
-Channel business-sent
-Channel business-junk
-Channel business-trash
+## IMAPAccount business
+## Host imap.fastmail.com
+## User bogdan@cleartype.io
+## PassCmd "security find-internet-password -s 'imap.fastmail.com' -a 'bogdan@cleartype.io' -w"
+## AuthMechs LOGIN
+## Port 993
+## SSLType IMAPS
+## CertificateFile /etc/ssl/certs/ca-certificates.crt
+##
+## IMAPStore business-remote
+## Account business
+##
+## MaildirStore business-local
+## Path ~/Mail/business/
+## Inbox ~/Mail/business/inbox
+##
+## Channel business-inbox
+## Far :business-remote:INBOX/
+## Near :business-local:inbox
+## Create Both
+## Expunge Both
+##
+## Channel business-archive
+## Far :business-remote:Archive
+## Near :business-local:archive
+## Create Both
+## Expunge Both
+##
+## Channel business-drafts
+## Far :business-remote:Drafts
+## Near :business-local:drafts
+## Create Both
+## Expunge Both
+##
+## Channel business-sent
+## Far :business-remote:Sent
+## Near :business-local:sent
+## Create Both
+## Expunge Both
+##
+## Channel business-junk
+## Far :business-remote:Spam
+## Near :business-local:junk
+## Create Both
+## Expunge Both
+##
+## Channel business-trash
+## Far :business-remote:Trash
+## Near :business-local:trash
+## Create Both
+## Expunge Both
+##
+## Group business
+## Channel business-inbox
+## Channel business-archive
+## Channel business-drafts
+## Channel business-sent
+## Channel business-junk
+## Channel business-trash
 
 
 ## personal ###################################################################
