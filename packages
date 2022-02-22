@@ -41,6 +41,8 @@ redis
 rlwrap
 shellcheck
 tarsnap
+texlive-latex-recommended
+texlive-plain-generic
 the_silver_searcher
 tmux
 tree
