@@ -1,0 +1,91 @@
+layouts:
+  - tall
+  - wide
+  - fullscreen
+  - column
+
+mod1:
+  - option
+  - shift
+
+mod2:
+  - command
+  - option
+  - shift
+
+cycle-layout:
+  mod: mod1
+  key: disabled
+
+cycle-layout-backward:
+  mod: mod1
+  key: disabled
+
+focus-screen-3:
+  mod: mod1
+  key: disabled
+
+focus-screen-4:
+  mod: mod1
+  key: disabled
+
+throw-screen-3:
+  mod: mod1
+  key: disabled
+
+throw-screen-4:
+  mod: mod1
+  key: disabled
+
+increase-main:
+  mod: mod1
+  key: disabled
+
+decrease-main:
+  mod: mod1
+  key: disabled
+
+swap-screen-ccw:
+  mod: mod1
+  key: disabled
+
+swap-screen-cw:
+  mod: mod1
+  key: disabled
+
+throw-space-left:
+  mod: mod1
+  key: disabled
+
+throw-space-right:
+  mod: mod1
+  key: disabled
+
+display-current-layout:
+  mod: mod1
+  key: disabled
+
+toggle-focus-follows-mouse:
+  mod: mod1
+  key: disabled
+
+floating:
+  - com.agilebits.onepassword7
+  - com.apple.MobileSMS
+  - com.apple.finder
+  - com.apple.systempreferences
+  - com.kapeli.dashdoc
+  - com.tapbots.Tweetbot3Mac
+  - io.defn.Franz
+
+screen-padding-bottom: 10
+screen-padding-left: 10
+screen-padding-right: 10
+screen-padding-top: 10
+send-crash-reports: false
+use-canary-build: true
+window-margin-size: 10
+window-margins: true
+window-minimum-height: 0
+window-minimum-width: 0
+window-resize-step: 5
