@@ -1,0 +1,8 @@
+server {
+    listen 80;
+    server_name local.franz;
+
+    location / {
+        root /Users/bogdan/work/Franz/website;
+    }
+}
