@@ -41,6 +41,7 @@ redis
 rlwrap
 shellcheck
 tarsnap
+texlive +full
 texlive-latex-recommended
 texlive-plain-generic
 the_silver_searcher
@@ -50,4 +51,5 @@ vegeta
 vim
 watch
 watchman
+xxhash
 yubikey-manager
