@@ -298,8 +298,8 @@ fi
 
 log "Selecting Python version..."
 if [ "$DRY_RUN" -eq 0 ]; then
-    sudo port select python python38
-    sudo port select pip pip38
+    sudo port select python python311
+    sudo port select pip pip311
 fi
 
 log "Installing pip packages..."
@@ -320,5 +320,5 @@ done < "$ROOT/packages-pip"
 
 log "Linking ca-certificates..."
 if [ "$DRY_RUN" -eq 0 ]; then
-    sudo ln -sf /Library/Python/3.8/site-packages/certifi/cacert.pem /etc/ssl/certs/ca-certificates.crt
+    sudo ln -sf /Library/Python/3.11/site-packages/certifi/cacert.pem /etc/ssl/certs/ca-certificates.crt
 fi
