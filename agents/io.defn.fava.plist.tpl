@@ -10,7 +10,7 @@
       <string>-H</string>
       <string>127.0.0.1</string>
       <string>-p</string>
-      <string>5001</string>
+      <string>6001</string>
       <string>cleartype.beancount</string>
       <string>personal.beancount</string>
     </array>
