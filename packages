@@ -34,6 +34,7 @@ pinentry-mac
 postgresql13-server
 py310-beancount
 py310-pip
+py311-pip
 python310
 rabbitmq-server
 readline
