@@ -146,6 +146,7 @@ if [ "$DRY_RUN" -eq 0 ]; then
 fi
 
 log "Linking dotfiles..."
+mkdir -p "$HOME/.config"
 mkdir -p "$HOME/.gnupg"
 mkdir -p "$HOME/.local"
 remove "$HOME/.config/fish"
