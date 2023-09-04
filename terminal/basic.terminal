@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CommandString</key>
+	<string>tmux attach -t scratch; or tmux new -s scratch</string>
+	<key>CursorColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxAREldO
+	U1doaXRlXE5TQ29sb3JTcGFjZVYkY2xhc3NNMC42ODg4ODkyNTE0ABADgALSFBUWF1ok
+	Y2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiFhhYTlNPYmplY3QIERokKTI3SUxRU1dd
+	ZGx5gI6Qkpeiq7O2AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAL8=
+	</data>
+	<key>CursorType</key>
+	<integer>0</integer>
+	<key>Font</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNALAAAAAAAABAQgAKAA18QEERh
+	bmtNb25vLVJlZ3VsYXLSFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9udKIZG1hO
+	U09iamVjdAgRGiQpMjdJTFFTWF5nbnd+hY6QkpSnrLfAx8oAAAAAAAABAQAAAAAAAAAc
+	AAAAAAAAAAAAAAAAAAAA0w==
+	</data>
+	<key>FontAntialias</key>
+	<true/>
+	<key>FontWidthSpacing</key>
+	<real>1.004032258064516</real>
+	<key>ProfileCurrentVersion</key>
+	<real>2.0699999999999998</real>
+	<key>RunCommandAsShell</key>
+	<false/>
+	<key>UseBoldFonts</key>
+	<false/>
+	<key>UseBrightBold</key>
+	<true/>
+	<key>name</key>
+	<string>Basic</string>
+	<key>type</key>
+	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<true/>
+</dict>
+</plist>
