@@ -323,3 +323,8 @@ log "Linking ca-certificates..."
 if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf /Library/Python/3.11/site-packages/certifi/cacert.pem /etc/ssl/certs/ca-certificates.crt
 fi
+
+## ncurses
+
+log "Adding terminfo for tmux-256color..."
+/usr/bin/tic -x tmux-256color
