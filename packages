@@ -28,8 +28,8 @@ memcached
 msmtp
 mu +emacs
 nginx +http2 +image_filter +secure_link
-nodejs17
-npm8
+nodejs16
+npm7
 par
 pinentry-mac
 postgresql13-server
