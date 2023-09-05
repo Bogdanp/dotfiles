@@ -11,7 +11,7 @@
       <string>git commit --no-gpg-sign -am "$(date)" && git push origin master</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/bogdan/sandbox/accounting</string>
+    <string>/Users/bogdan/Documents/Org</string>
     <key>StartCalendarInterval</key>
     <dict>
       <key>Hour</key>
