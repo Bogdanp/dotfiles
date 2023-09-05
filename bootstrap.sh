@@ -321,7 +321,7 @@ done < "$ROOT/packages-pip"
 
 log "Linking ca-certificates..."
 if [ "$DRY_RUN" -eq 0 ]; then
-    sudo ln -sf /Library/Python/3.11/site-packages/certifi/cacert.pem /etc/ssl/certs/ca-certificates.crt
+    sudo ln -sf /opt/local/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/certifi/cacert.pem /etc/ssl/certs/ca-certificates.crt
 fi
 
 ## ncurses
