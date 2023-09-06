@@ -1,5 +1,10 @@
 # dotfiles
 
+## Prerequisites
+
+Make sure the machine has a unique network name (System Settings ->
+Sharing -> Local Hostname).
+
 ## Setup
 
 1. Install [MacPorts].
@@ -14,6 +19,15 @@
 
 Email is synced via [isync] and sent via [msmtp], both of these use
 the OS X keychain for password management.
+
+## Quirks
+
+See `~/.local/var/log` for launch agent logs.
+
+### `io.defn.git-personal.plist` agent
+
+The folder this operates on lives in `~/Documents`, so it won't have
+access unless `zsh` is granted full disk access from System Settings.
 
 
 [MacPorts]: https://www.macports.org
