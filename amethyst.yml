@@ -21,27 +21,55 @@ cycle-layout-backward:
   mod: mod1
   key: disabled
 
-focus-screen-3:
+shrink-main:
   mod: mod1
-  key: disabled
+  key: h
 
-focus-screen-4:
+expand-main:
   mod: mod1
-  key: disabled
-
-throw-screen-3:
-  mod: mod1
-  key: disabled
-
-throw-screen-4:
-  mod: mod1
-  key: disabled
+  key: l
 
 increase-main:
   mod: mod1
   key: disabled
 
 decrease-main:
+  mod: mod1
+  key: disabled
+
+command1:
+  mod: mod1
+  key: disabled
+
+command2:
+  mod: mod1
+  key: disabled
+
+command3:
+  mod: mod1
+  key: disabled
+
+command4:
+  mod: mod1
+  key: disabled
+
+focus-ccw:
+  mod: mod1
+  key: p
+
+focus-cw:
+  mod: mod1
+  key: n
+
+focus-main:
+  mod: mod1
+  key: disabled
+
+focus-screen-ccw:
+  mod: mod1
+  key: disabled
+
+focus-screen-cw:
   mod: mod1
   key: disabled
 
@@ -53,20 +81,96 @@ swap-screen-cw:
   mod: mod1
   key: disabled
 
-throw-space-left:
+swap-ccw:
   mod: mod1
+  key: disabled
+
+swap-cw:
+  mod: mod1
+  key: disabled
+
+swap-main:
+  mod: mod1
+  key: disabled
+
+focus-screen-1:
+  mod: mod1
+  key: disabled
+
+focus-screen-2:
+  mod: mod1
+  key: disabled
+
+focus-screen-3:
+  mod: mod1
+  key: disabled
+
+focus-screen-4:
+  mod: mod1
+  key: disabled
+
+throw-screen-1:
+  mod: mod1
+  key: disabled
+
+throw-screen-2:
+  mod: mod1
+  key: disabled
+
+throw-screen-3:
+  mod: mod1
+  key: disabled
+
+throw-screen-4:
+  mod: mod1
+  key: disabled
+
+select-tall-layout:
+  mod: mod1
+  key: a
+
+select-wide-layout:
+  mod: mod1
+  key: s
+
+select-fullscreen-layout:
+  mod: mod1
+  key: d
+
+select-column-layout:
+  mod: mod1
+  key: f
+
+throw-space-left:
+  mod: mod2
   key: disabled
 
 throw-space-right:
-  mod: mod1
+  mod: mod2
   key: disabled
+
+toggle-float:
+  mod: mod1
+  key: t
 
 display-current-layout:
   mod: mod1
-  key: disabled
+  key: i
+
+toggle-tiling:
+  mod: mod1
+  key: t
+
+reevaluate-windows:
+  mod: mod1
+  key: z
 
 toggle-focus-follows-mouse:
   mod: mod1
+  key: disabled
+
+relaunch-amethyst:
+  mod: mod2
   key: disabled
 
 floating:
