@@ -162,6 +162,9 @@ link "tmux" "$HOME/.tmux"
 link "tmux.conf" "$HOME/.tmux.conf"
 link "vimrc" "$HOME/.vimrc"
 
+log "Linking utils..."
+link "bin/envy" "$HOME/bin/envy"
+
 
 ## Key bindings
 
