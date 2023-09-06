@@ -229,6 +229,16 @@ if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf "$ROOT/bin/tarsnap-perform-backup" "/opt/local/bin/"
 fi
 
+if ! [ -f ~/.tarsnap.key ]; then
+    log "Creating tarsnap key..."
+    if [ "$DRY_RUN" -eq 0 ]; then
+        tarsnap-keygen \
+            --keyfile ~/.tarsnap.key \
+            --machine "$(scutil --get LocalHostName)" \
+            --user bogdan@defn.io
+    fi
+fi
+
 render "agents/io.defn.tarsnap-backup.plist" '$HOME'
 install_agent "io.defn.tarsnap-backup"
 
@@ -305,9 +315,9 @@ fi
 
 log "Installing pip packages..."
 while IFS= read -r PKG; do
-    if ! grep -q "$PKG" "$ROOT/workspace/installed-pip"; then
-        log "Installing $PKG (pip)..."
-        if [ "$DRY_RUN" -eq 0 ]; then
+    if [ "$DRY_RUN" -eq 0 ]; then
+        if ! grep -q "$PKG" "$ROOT/workspace/installed-pip"; then
+            log "Installing $PKG (pip)..."
             if ! sudo pip install "$PKG" 2>"$ROOT/workspace/errors.$PKG"; then
                 log "Failed to install $PKG, see '$ROOT/workspace/errors.$PKG' for details..."
                 echo "$PKG" >> "$ROOT/workspace/failures-pip"
