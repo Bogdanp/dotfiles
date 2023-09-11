@@ -16,6 +16,7 @@ git
 git-lfs
 gnupg2
 go
+goaccess
 graphviz
 htop
 hugo
