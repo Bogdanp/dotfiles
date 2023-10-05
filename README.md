@@ -29,6 +29,12 @@ See `~/.local/var/log` for launch agent logs.
 The folder this operates on lives in `~/Documents`, so it won't have
 access unless `zsh` is granted full disk access from System Settings.
 
+### External Displays
+
+From the "Arrange..." menu of the "Displays" section of System Settings,
+move the menu bar to the external display to have spaces automatically
+migrate to the external display when it's plugged in.
+
 
 [MacPorts]: https://www.macports.org
 [isync]: http://isync.sourceforge.net/
