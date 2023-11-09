@@ -3,7 +3,6 @@ ack
 argon2
 autoconf
 automake
-bazel
 cloc
 coreutils
 curl
