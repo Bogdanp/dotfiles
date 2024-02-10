@@ -16,7 +16,7 @@ server {
     listen      10993;
     server_name 127.0.0.1;
 
-    root /Users/bogdan/work/matchacha/uploads;
+    root /Users/bogdan/sandbox/matchacha/uploads;
 
     location / {
         image_filter resize $arg_w $arg_h;
