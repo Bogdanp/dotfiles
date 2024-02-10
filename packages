@@ -44,6 +44,7 @@ rlwrap
 shellcheck
 tarsnap
 texlive +full
+texlive-latex-extra
 texlive-latex-recommended
 texlive-plain-generic
 the_silver_searcher
