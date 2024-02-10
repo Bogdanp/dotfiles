@@ -2,7 +2,8 @@
 255.255.255.255	broadcasthost
 ::1             localhost
 
-127.0.0.1 local.blackmagic local.matchacha local.remember local.franz
+127.0.0.1 local.blackmagic local.franz local.iuniq.space local.matchacha local.remember
+127.0.0.1 kafka-1 kafka-2 kafka-3
 # Added by Docker Desktop
 # To allow the same kube context to work on the host and the container:
 127.0.0.1 kubernetes.docker.internal
