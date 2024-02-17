@@ -23,6 +23,10 @@ server {
     ssl_certificate     /etc/ssl/certs/nginx-selfsigned.crt;
     ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
 
+    location /identicons {
+        root /Users/bogdan/sandbox/iuniq;
+    }
+
     location / {
         client_max_body_size 20M;
 
