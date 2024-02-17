@@ -1,7 +1,7 @@
 [alias]
 	a = add
 	ap = add -p
-	b = !git for-each-ref --sort=\"-authordate\" --format=\"%(color:yellow)%(authordate)%09%(color:red)%(objectname:short)%09%(color:blue)%(refname)\" refs/heads | sed -e \"s-refs/heads/--\"
+	b = !git for-each-ref --sort=\"-authordate\" --format=\"%(color:yellow)%(authordate)%09%(color:red)%(objectname:short)%09%(color:blue)%(refname)\" refs/heads
 	c = commit
 	cam = commit -am
 	co = checkout
