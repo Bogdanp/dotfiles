@@ -27,6 +27,10 @@ server {
         root /Users/bogdan/sandbox/iuniq;
     }
 
+    location /uploads {
+        root /Users/bogdan/sandbox/iuniq;
+    }
+
     location / {
         client_max_body_size 20M;
 
