@@ -1,5 +1,5 @@
 upstream blackmagic_backend {
-    server 127.0.0.1:8000;
+    server 127.0.0.1:5100;
 
     keepalive 128;
 }
