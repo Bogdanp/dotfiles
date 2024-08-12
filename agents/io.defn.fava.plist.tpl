@@ -6,7 +6,7 @@
     <string>io.defn.fava</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/opt/local/bin/fava</string>
+      <string>$HOME/Library/Python/3.12/bin/fava</string>
       <string>-H</string>
       <string>127.0.0.1</string>
       <string>-p</string>
