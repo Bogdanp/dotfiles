@@ -312,8 +312,8 @@ fi
 
 log "Selecting Python version..."
 if [ "$DRY_RUN" -eq 0 ]; then
-    sudo port select python python311
-    sudo port select pip pip311
+    sudo port select python python312
+    sudo port select pip pip312
 fi
 
 log "Installing pip packages..."
