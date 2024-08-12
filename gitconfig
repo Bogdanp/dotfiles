@@ -17,6 +17,7 @@
 [core]
 	editor = emacsclient
 	excludesfile = ~/.gitignore
+  fsmonitor = true
 [commit]
 	gpgsign = true
 [user]
