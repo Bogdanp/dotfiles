@@ -1,4 +1,3 @@
-ImageMagick
 ack
 argon2
 autoconf
@@ -7,7 +6,6 @@ cloc
 coreutils
 curl
 emacs-mac-app
-fava
 ffmpeg
 fish
 fzf
@@ -19,6 +17,7 @@ goaccess
 graphviz
 htop
 hugo
+ImageMagick
 inetutils
 ispell
 isync
@@ -28,11 +27,11 @@ memcached
 msmtp
 mu +emacs
 nginx +http2 +image_filter +secure_link
-nodejs16
-npm7
+nodejs18
+npm9
 par
 pinentry-mac
-postgresql13-server
+postgresql16-server
 py312-pip
 python312
 rabbitmq-server
