@@ -5,7 +5,7 @@
 ## PassCmd "security find-internet-password -s 'imap.fastmail.com' -a 'bogdan@cleartype.io' -w"
 ## AuthMechs LOGIN
 ## Port 993
-## SSLType IMAPS
+## TLSType IMAPS
 ## CertificateFile /etc/ssl/certs/ca-certificates.crt
 ##
 ## IMAPStore business-remote
@@ -67,7 +67,7 @@ User bogdan@defn.io
 PassCmd "security find-internet-password -s 'imap.fastmail.com' -a 'bogdan@defn.io' -w"
 AuthMechs LOGIN
 Port 993
-SSLType IMAPS
+TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 IMAPStore personal-remote
@@ -129,7 +129,7 @@ Channel personal-trash
 ## PassCmd "security find-internet-password -s 'imap.gmail.com' -a 'popa.bogdanp@gmail.com' -w"
 ## AuthMechs LOGIN
 ## Port 993
-## SSLType IMAPS
+## TLSType IMAPS
 ## CertificateFile /etc/ssl/certs/ca-certificates.crt
 ##
 ## IMAPStore personal-archive-remote
