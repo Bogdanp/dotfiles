@@ -176,6 +176,7 @@ relaunch-amethyst:
 floating:
   - com.1password.1password
   - com.agilebits.onepassword7
+  - com.apple.CarPlaySimulator
   - com.apple.MobileSMS
   - com.apple.finder
   - com.apple.systempreferences
