@@ -231,6 +231,7 @@ fi
 log "Installing tarsnap scripts..."
 if [ "$DRY_RUN" -eq 0 ]; then
     sudo ln -sf "$ROOT/bin/tarsnap-perform-backup" "/opt/local/bin/"
+    sudo ln -sf "$ROOT/bin/tarsnap-prune-backups" "/opt/local/bin/"
 fi
 
 if ! [ -f ~/.tarsnap.key ]; then
@@ -245,6 +246,8 @@ fi
 
 render "agents/io.defn.tarsnap-backup.plist" '$HOME'
 install_agent "io.defn.tarsnap-backup"
+render "agents/io.defn.tarsnap-prune-backups.plist" '$HOME'
+install_agent "io.defn.tarsnap-prune-backups"
 
 
 ## Notes & accounting agents

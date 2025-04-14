@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+export PATH="/usr/bin:/opt/local/bin:/Users/bogdan/bin:$PATH"
+
+tarsnap --list-archives | \
+    prunef \
+        --keep-daily 7 \
+        --keep-weekly 2 \
+        --keep-monthly 3 \
+        'hercules-%Y-%m-%d_%H-%M-%S' | \
+    tee todo
+
+while IFS='' read -r archive; do
+    tarsnap -d -f "$archive"
+done < <(sort todo)
