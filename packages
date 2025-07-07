@@ -30,6 +30,7 @@ nginx +http2 +image_filter +secure_link
 nodejs22
 npm10
 par
+pgbadger
 pinentry-mac
 postgresql16-server
 py312-pip
