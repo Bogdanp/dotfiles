@@ -5,7 +5,7 @@ set -xg LANG en_US.UTF-8
 
 # Paths
 set -xg PATH /opt/local/bin /usr/local/bin /usr/bin /usr/sbin /bin /sbin $PATH
-set -xg PATH $PATH $HOME/bin $HOME/Library/Python/3.12/bin /opt/local/Library/Frameworks/Python.framework/Versions/3.12/bin $HOME/.cargo/bin
+set -xg PATH $PATH $HOME/bin $HOME/.local/bin $HOME/Library/Python/3.12/bin /opt/local/Library/Frameworks/Python.framework/Versions/3.12/bin $HOME/.cargo/bin
 set -xg PATH /Users/bogdan/.npm-global/bin $PATH
 set -xg MANPATH /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/share/man /opt/local/man /usr/share/man /usr/local/share/man
 
