@@ -1,2 +1,4 @@
 .DS_Store
 .agent-shell
+.claude/settings.local.json
+.claude/worktrees/
