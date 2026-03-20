@@ -177,8 +177,9 @@ floating:
   - com.1password.1password
   - com.agilebits.onepassword7
   - com.apple.CarPlaySimulator
-  - com.apple.MobileSMS
   - com.apple.finder
+  - com.apple.iphonesimulator
+  - com.apple.MobileSMS
   - com.apple.systempreferences
   - com.kapeli.dashdoc
   - io.defn.Franz
