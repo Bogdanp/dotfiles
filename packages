@@ -22,6 +22,7 @@ inetutils
 ispell
 isync
 jq
+jujutsu
 libmemcached
 memcached
 msmtp
