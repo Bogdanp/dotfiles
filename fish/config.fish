@@ -33,3 +33,6 @@ set fish_color_search_match --background='#f5f5f5'
 set fish_pager_color_prefix '#ff0000' --underline
 set fish_pager_color_progress '#ffffff' --background='#ff0000'
 set fish_pager_color_description '#948c94' --background='#ffffff'
+
+# opencode
+fish_add_path /Users/bogdan/.opencode/bin
