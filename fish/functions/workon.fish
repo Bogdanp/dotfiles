@@ -26,7 +26,7 @@ function workon
             vf activate "$PROJECT"
         end
 
-        tmux rename-window "$PROJECT"
+        rex window rename "$PROJECT"
     else;
         echo "usage: workon PROJECT"
         return 1
