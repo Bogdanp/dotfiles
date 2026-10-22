@@ -10,7 +10,7 @@ bitbucket.setup     mituharu emacs-mac emacs-${emacs_version}-mac-${emacs_mac_ve
 name                emacs-mac-app
 conflicts           emacs-app emacs-app-devel
 version             ${emacs_mac_ver}
-revision            9
+revision            10
 categories          aqua editors
 maintainers         {amake @amake} openmaintainer
 
@@ -102,7 +102,7 @@ subport ${name}-devel {
     set date            2025-09-20
 
     version         [string map {- {}} ${date}]
-    revision        9
+    revision        10
 
     long_description \
         ${name} is the \"Mac port\" of GNU Emacs ${emacs_version}. \
@@ -153,30 +153,12 @@ post-destroot {
     set plist ${destroot}${applications_dir}/${appname}.app/Contents/Info.plist
     system "/usr/libexec/PlistBuddy -c 'Add :LSEnvironment dict' \
         -c 'Add :LSEnvironment:EMACS_REINVOKED_FROM_SHELL string 1' '${plist}'"
-}
 
-# Local change 2 (see ../../README.md): give the bundle a Finder
-# custom icon (files/Emacs-padded.icns), which macOS 26+ draws in its
-# original shape instead of a squircle.  Done on the live bundle after
-# every activation so the resource fork need not survive archiving.
-post-activate {
-    set appname [expr {[variant_isset renameapp] ? "EmacsMac" : "Emacs"}]
-    set app     ${applications_dir}/${appname}.app
-    set iconrez "${app}/Icon\r"
-    set tmpdir  [exec mktemp -d]
-    copy ${filespath}/Emacs-padded.icns ${tmpdir}/icon.icns
-    system "sips -i ${tmpdir}/icon.icns >/dev/null"
-    system "/usr/bin/xcrun DeRez -only icns ${tmpdir}/icon.icns > ${tmpdir}/icon.rsrc"
-    delete ${iconrez}
-    system "/usr/bin/xcrun Rez -append ${tmpdir}/icon.rsrc -o '${iconrez}'"
-    system "/usr/bin/xcrun SetFile -a C ${app}"
-    system "/usr/bin/xcrun SetFile -a V '${iconrez}'"
-    delete ${tmpdir}
-}
-
-pre-deactivate {
-    set appname [expr {[variant_isset renameapp] ? "EmacsMac" : "Emacs"}]
-    delete "${applications_dir}/${appname}.app/Icon\r"
+    # Local change 2 (see ../../README.md): ship a Liquid Glass icon,
+    # files/Emacs.icon compiled by actool into files/Assets.car.
+    copy ${filespath}/Assets.car \
+        ${destroot}${applications_dir}/${appname}.app/Contents/Resources
+    system "/usr/libexec/PlistBuddy -c 'Add :CFBundleIconName string Emacs' '${plist}'"
 }
 
 variant multitty description {Enable Multi-TTY support} {

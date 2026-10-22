@@ -13,7 +13,7 @@ needs a search-only ACL for it (`chmod +a "macports allow search" ~`).
 ## aqua/emacs-mac-app
 
 Copy of the official `emacs-mac-app` Portfile (and its `files/`) with
-two local changes, applied to both subports (revisions bumped to 9).
+two local changes, applied to both subports (revisions bumped to 10).
 Install with `sudo port -N install emacs-mac-app-devel -nativecomp`.
 
 ### 1. `LSEnvironment` sets `EMACS_REINVOKED_FROM_SHELL=1`
@@ -31,20 +31,22 @@ re-exec for LaunchServices launches too. PATH still gets
 `${prefix}/bin` from the port's `emacs.c` patch; the rest of the shell
 environment comes from exec-path-from-shell in init.el.
 
-### 2. Finder custom icon
+### 2. Liquid Glass icon
 
-`post-activate` assigns `files/Emacs-padded.icns` as a Finder custom
-icon (an `Icon\r` resource file plus the custom-icon flag), and
-`pre-deactivate` removes it. macOS 26+ draws an app's bundled icon
-inside a squircle but draws custom icons in their original shape, so
-this keeps the classic Emacs icon. The Dock caches icons aggressively:
-after an upgrade, remove Emacs from the Dock and add it back.
+`files/Emacs.icon` is an Icon Composer document: the white "E" from
+upstream's `etc/images/icons/hicolor/scalable/apps/emacs.svg` as a
+glass layer over a squircle filled with the icon's purple gradient.
+`files/Assets.car` is that document compiled by actool. `post-destroot`
+copies the catalog into the bundle and sets `CFBundleIconName`, so
+macOS 26+ renders the icon with live glass effects and dark/tinted
+variants. The Dock caches icons aggressively: after an upgrade, remove
+Emacs from the Dock and add it back.
 
-`Emacs-padded.icns` is the bundle's own `Emacs.icns` with the artwork
-scaled to 824/1024 of the canvas, the margin Apple's icon grid uses;
-the raw artwork fills the canvas and looks oversized in the Dock and
-the app switcher. Regenerate it after an upstream icon change:
+Recompile after editing the document (actool ships with Xcode, not
+the Command Line Tools):
 
-    swiftc -O -o pad-icon files/pad-icon.swift
-    ./pad-icon /Applications/MacPorts/EmacsMac.app/Contents/Resources/Emacs.icns Emacs.iconset 824
-    iconutil -c icns Emacs.iconset -o files/Emacs-padded.icns
+    out=$(mktemp -d)
+    DEVELOPER_DIR=/Applications/Xcode.app xcrun actool \
+        --app-icon Emacs --platform macosx --minimum-deployment-target 26.0 \
+        --output-partial-info-plist /dev/null --compile "$out" files/Emacs.icon
+    mv "$out/Assets.car" files/

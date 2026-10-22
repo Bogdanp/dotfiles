@@ -1,0 +1,25 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "srgb:0.51373,0.50588,0.77255,1.00000",
+      "srgb:0.64706,0.18039,0.79608,1.00000"
+    ],
+    "orientation" : { "start" : { "x" : 0, "y" : 0 }, "stop" : { "x" : 1, "y" : 1 } }
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "glass" : true,
+          "image-name" : "glyph.svg",
+          "name" : "glyph",
+          "position" : { "scale" : 1.15, "translation-in-points" : [ 0, 0 ] }
+        }
+      ],
+      "shadow" : { "kind" : "neutral", "opacity" : 0.5 },
+      "specular" : true,
+      "translucency" : { "enabled" : true, "value" : 0.5 }
+    }
+  ],
+  "supported-platforms" : { "squares" : [ "macOS" ] }
+}
