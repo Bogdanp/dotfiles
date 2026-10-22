@@ -25,8 +25,6 @@ function workon
         if test -d "$HOME/.virtualenvs/$PROJECT"
             vf activate "$PROJECT"
         end
-
-        rex window rename "$PROJECT"
     else;
         echo "usage: workon PROJECT"
         return 1
