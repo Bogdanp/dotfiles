@@ -102,6 +102,33 @@ if [ "$DRY_RUN" -eq 1 ]; then
 fi
 
 
+## MacPorts
+
+# The local port overlay in ports/ must be registered before any
+# packages are installed, otherwise ports it shadows (see
+# ports/README.md) come from the official tree instead.
+log "Linking MacPorts sources..."
+render "etc/macports/sources.conf" '$HOME'
+if [ "$DRY_RUN" -eq 0 ]; then
+    sudo ln -sf "$ROOT/etc/macports/sources.conf" "/opt/local/etc/macports/sources.conf"
+fi
+
+# The index is generated, platform-specific and gitignored.
+log "Indexing the local port overlay..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    (cd "$ROOT/ports" && portindex >/dev/null)
+fi
+
+# MacPorts reads Portfiles as the `macports' user, and home directories
+# are not world-searchable, so grant it traversal of $HOME only.
+log "Granting the macports user access to the local port overlay..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    if ! ls -le "$HOME" | grep -q 'user:macports allow search'; then
+        chmod +a "macports allow search" "$HOME"
+    fi
+fi
+
+
 ## Packages
 
 log "Creating workspace..."
@@ -301,15 +328,6 @@ fi
 log "Selecting PostgreSQL version..."
 if [ "$DRY_RUN" -eq 0 ]; then
     sudo port select postgresql postgresql16
-fi
-
-
-## MacPorts
-
-log "Linking MacPorts sources..."
-render "etc/macports/sources.conf" '$HOME'
-if [ "$DRY_RUN" -eq 0 ]; then
-    sudo ln -sf "$ROOT/etc/macports/sources.conf" "/opt/local/etc/macports/sources.conf"
 fi
 
 

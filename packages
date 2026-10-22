@@ -5,7 +5,7 @@ automake
 cloc
 coreutils
 curl
-emacs-mac-app
+emacs-mac-app-devel
 ffmpeg
 fish
 fzf
