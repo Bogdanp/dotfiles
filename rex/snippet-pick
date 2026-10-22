@@ -1,0 +1,24 @@
+#!/bin/sh
+# Pick a snippet with fzf and paste it into a Rex terminal.
+#
+# usage: snippet-pick SESSION_ID BLOCK_ID SNIPPETS_DIR
+#
+# Run by the "snippet" action in snippets.lua in a split below the target.
+
+set -eu
+
+session_id=$1
+block_id=$2
+dir=$3
+
+cd "$dir"
+name=$(ls -1 | fzf \
+  --prompt='snippet> ' \
+  --preview='cat {}' \
+  --preview-window='right,60%,wrap') || exit 0
+
+jq -n --arg session_id "$session_id" --arg block_id "$block_id" --rawfile text "$name" '{
+  session_id: $session_id,
+  block_id: $block_id,
+  event: { type: "paste", payload: { text: ($text | rtrimstr("\n")) } }
+}' | rex api call -s "$session_id" block.event -
