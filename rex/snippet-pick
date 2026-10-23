@@ -28,7 +28,7 @@ block_id=$2
 dir=$3
 
 cd "$dir"
-name=$(ls -1 | fzf \
+name=$(printf '%s\n' * | fzf \
   --prompt='snippet> ' \
   --preview='cat {}' \
   --preview-window='right,60%,wrap') || exit 0
