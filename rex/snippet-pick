@@ -7,6 +7,22 @@
 
 set -eu
 
+# Join soft-wrapped lines into paragraphs. Blank lines, list items, headings,
+# quotes, indented lines, lines after a hard break, and fenced code blocks
+# keep their line breaks.
+unwrap() {
+  awk '
+    function starts_block(s) { return s ~ /^([-*+] |[0-9]+[.)] |#|>|[ \t]|```)/ }
+    {
+      join = NR > 1 && !fence && prev != "" && $0 != "" && prev !~ /  $/ && !starts_block($0)
+      if ($0 ~ /^```/) fence = !fence
+      printf "%s%s", (NR > 1 ? (join ? " " : "\n") : ""), $0
+      prev = $0
+    }
+    END { print "" }
+  '
+}
+
 session_id=$1
 block_id=$2
 dir=$3
@@ -17,8 +33,9 @@ name=$(ls -1 | fzf \
   --preview='cat {}' \
   --preview-window='right,60%,wrap') || exit 0
 
-jq -n --arg session_id "$session_id" --arg block_id "$block_id" --rawfile text "$name" '{
+text=$(unwrap < "$name")
+jq -n --arg session_id "$session_id" --arg block_id "$block_id" --arg text "$text" '{
   session_id: $session_id,
   block_id: $block_id,
-  event: { type: "paste", payload: { text: ($text | rtrimstr("\n")) } }
+  event: { type: "paste", payload: { text: $text } }
 }' | rex api call -s "$session_id" block.event -
