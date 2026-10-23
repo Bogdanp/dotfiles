@@ -1,6 +1,6 @@
--- Paste prompt snippets kept in the current repository.
+-- Paste snippets kept in the current repository.
 --
--- Snippets are plain text files under <repo>/.agents/snippets/. The "snippet"
+-- Snippets are plain text files under <repo>/.snippets/. The "snippet"
 -- action looks up the focused terminal's directory, finds the git repository
 -- it belongs to, and opens an fzf picker in a split below it. The chosen file
 -- is pasted into the terminal the action was run from.
@@ -33,16 +33,16 @@ end
 rex.action{
   name = "snippet",
   title = "Paste Snippet…",
-  category = "Prompts",
-  keywords = "prompt agent snippets paste",
-  description = "Pick a file from the repository's .agents/snippets/ and paste it into the focused terminal.",
+  category = "Snippets",
+  keywords = "snippets paste",
+  description = "Pick a file from the repository's .snippets/ and paste it into the focused terminal.",
   run = function(ctx)
     if ctx.block_id == nil then error("no focused terminal", 0) end
     local pwd, err = block_pwd(ctx.block_id)
     if pwd == nil then error(err, 0) end
     local root, err = repo_root(pwd)
     if root == nil then error(err, 0) end
-    local dir = root .. "/.agents/snippets"
+    local dir = root .. "/.snippets"
     if not has_snippets(dir) then error("no snippets in " .. dir, 0) end
 
     local _, err = rex.session.new_split{
