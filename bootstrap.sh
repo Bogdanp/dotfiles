@@ -203,6 +203,17 @@ mkdir -p "$HOME/Library/KeyBindings"
 link "DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/"
 
 
+## Spaces app assignments
+
+log "Restoring Spaces app assignments..."
+if [ "$DRY_RUN" -eq 0 ]; then
+    /usr/bin/plutil -lint "$ROOT/spaces-app-bindings.plist"
+    /usr/bin/defaults write com.apple.spaces app-bindings "$(cat "$ROOT/spaces-app-bindings.plist")"
+    log "Restarting Dock to reload Spaces app assignments..."
+    /usr/bin/killall Dock || true
+fi
+
+
 ## Emacs
 
 if [ ! -d "$HOME/.emacs.d" ]; then
