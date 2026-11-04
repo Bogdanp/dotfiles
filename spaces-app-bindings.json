@@ -17,7 +17,8 @@
   },
   "com.openai.codex": {
     "desktop": 1,
-    "display": "secondary"
+    "display": "secondary",
+    "single_desktop": 3
   },
   "com.spotify.client": {
     "desktop": 3,
