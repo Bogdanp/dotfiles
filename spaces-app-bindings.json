@@ -1,0 +1,50 @@
+{
+  "com.anthropic.claudefordesktop": {
+    "desktop": 3,
+    "display": "main"
+  },
+  "com.apple.ical": {
+    "desktop": 3,
+    "display": "main"
+  },
+  "com.apple.terminal": {
+    "desktop": 1,
+    "display": "main"
+  },
+  "com.google.chrome": {
+    "desktop": 5,
+    "display": "main"
+  },
+  "com.openai.codex": {
+    "desktop": 1,
+    "display": "secondary"
+  },
+  "com.spotify.client": {
+    "desktop": 3,
+    "display": "main"
+  },
+  "com.superlogical.rex": {
+    "desktop": 1,
+    "display": "main"
+  },
+  "company.thebrowser.browser": {
+    "desktop": 2,
+    "display": "main"
+  },
+  "net.whatsapp.whatsapp": {
+    "desktop": 3,
+    "display": "main"
+  },
+  "org.gnu.emacs": {
+    "desktop": 1,
+    "display": "main"
+  },
+  "org.mozilla.firefox": {
+    "desktop": 2,
+    "display": "main"
+  },
+  "ru.keepcoder.telegram": {
+    "desktop": 3,
+    "display": "main"
+  }
+}
