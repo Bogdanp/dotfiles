@@ -59,8 +59,14 @@ class AssignmentsTest(unittest.TestCase):
         with patch.object(sys, 'argv', ['spaces-app-bindings', *args, '--file', str(path)]), \
              patch.object(bindings, 'live_displays', return_value=roles), \
              patch.object(bindings.subprocess, 'check_output', return_value=plistlib.dumps(preferences)), \
+             patch.object(bindings, 'move_windows') as move, \
              patch.object(bindings.subprocess, 'run') as run:
             bindings.main()
+            if args[0] == 'restore':
+                move.assert_called_once_with(roles, bindings.resolve(roles, json.loads(path.read_text())),
+                                             **({'dry_run': True} if '--dry-run' in args else {}))
+            else:
+                move.assert_not_called()
             return run
 
     def test_restore_ignores_stale_saved_monitor_layout_and_merges(self):
@@ -74,6 +80,13 @@ class AssignmentsTest(unittest.TestCase):
             self.assertEqual(dict(zip(command[5::2], command[6::2])),
                              dict(bindings.resolve(self.single, self.apps), unrelated='keep'))
             self.assertEqual(run.call_args_list[1].args[0], ['/usr/bin/killall', 'Dock'])
+
+    def test_dry_run_plans_window_moves_without_writing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'apps.json'
+            path.write_text(json.dumps(self.apps))
+            run = self.run_main(['restore', '--dry-run'], self.single, path, {})
+            run.assert_not_called()
 
     def test_missing_desktop_fails_before_any_write(self):
         with tempfile.TemporaryDirectory() as directory:

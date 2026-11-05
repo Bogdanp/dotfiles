@@ -4,6 +4,9 @@
 import argparse
 import ctypes as c
 import json
+import hashlib
+import platform
+import tempfile
 import plistlib
 import subprocess
 from pathlib import Path
@@ -132,6 +135,34 @@ def backup(preferences, roles):
     return result
 
 
+def move_windows(roles, resolved, dry_run=False):
+    """Use a cached native helper to move and verify existing ordinary windows."""
+    ids = {space['uuid']: space['id64']
+           for monitors in roles.values() for monitor in monitors
+           for space in desktops(monitor)}
+    targets = {app: ids[uuid] for app, uuid in resolved.items() if uuid != 'AllSpaces'}
+    if not targets:
+        return
+    source = Path(__file__).with_name('spaces-windows.m')
+    fingerprint = hashlib.sha256(source.read_bytes() +
+                                 (platform.mac_ver()[0] + platform.machine()).encode()).hexdigest()[:20]
+    cache = Path.home() / 'Library/Caches/dotfiles'
+    cache.mkdir(parents=True, exist_ok=True)
+    helper = cache / f'spaces-windows-{fingerprint}'
+    if not helper.exists():
+        with tempfile.NamedTemporaryFile(dir=cache, prefix='spaces-windows-', delete=False) as file:
+            temporary = Path(file.name)
+        try:
+            subprocess.run(['/usr/bin/xcrun', 'clang', str(source), '-o', str(temporary),
+                            '-framework', 'AppKit', '-framework', 'ApplicationServices',
+                            '-F', '/System/Library/PrivateFrameworks', '-framework', 'SkyLight'], check=True)
+            temporary.replace(helper)
+        finally:
+            temporary.unlink(missing_ok=True)
+    command = [str(helper)] + (['--dry-run'] if dry_run else [])
+    subprocess.run(command, input=json.dumps(targets), text=True, check=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['backup', 'restore'])
@@ -168,7 +199,10 @@ def main():
         resolved = resolve(roles, assignments)
         for app, uuid in sorted(resolved.items()):
             print(f'{app}: {assignments[app]} -> {uuid!r}')
-        if args.dry_run or not resolved:
+        if args.dry_run:
+            move_windows(roles, resolved, dry_run=True)
+            return
+        if not resolved:
             return
         # Merge so apps absent from the backup keep their current assignments.
         merged = dict(preferences.get('app-bindings', {}), **resolved)
@@ -177,6 +211,7 @@ def main():
             command.extend([app, uuid])
         subprocess.run(command, check=True)
         subprocess.run(['/usr/bin/killall', 'Dock'], check=False)
+        move_windows(roles, resolved)
     except (AttributeError, ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as error:
         parser.exit(1, f'{error}\n')
 

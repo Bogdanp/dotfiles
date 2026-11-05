@@ -59,8 +59,13 @@ An optional `single_desktop` overrides the number in single-monitor mode:
 Codex uses Desktop 3 alone, and secondary-display Desktop 1 with two monitors.
 Create the required desktops in Mission Control first (this configuration needs
 five). If a target is unavailable or ambiguous, restore exits before writing.
-Restore merges the assignments with existing ones and restarts Dock to apply them;
-it does not run automatically when monitors change.
+Restore merges the assignments with existing ones, restarts Dock, then moves
+existing ordinary windows to their assigned desktops and verifies each move.
+Fullscreen, shared/all-desktop, and unmanaged windows are left in place. Apps
+assigned to All Desktops are not moved. A failed move produces a nonzero exit
+status; the assignment preferences may already have been restored.
+`--dry-run` reports proposed moves without changing assignments or windows.
+Restore does not run automatically when monitors change.
 
 To update the backup from current assignments:
 
@@ -74,7 +79,12 @@ existing single-monitor overrides. A new backup made with one display has only
 main-display targets until you configure the multi-monitor layout.
 
 Live layout detection uses macOS's private SkyLight API and fails without writing
-if that API is unavailable. No extra Python packages are required.
+if that API is unavailable. No extra Python packages are required. Moving windows
+uses `bin/spaces-windows.m`, a native helper compiled with `xcrun clang` on first
+use (requires Xcode or Command Line Tools) and cached in
+`~/Library/Caches/dotfiles`. Source or macOS version changes rebuild the helper.
+The helper uses a private SkyLight operation and verifies its asynchronous result;
+it does not require disabling SIP or injecting code into another process.
 
 Regression tests (no preference writes):
 
