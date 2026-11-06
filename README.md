@@ -59,8 +59,10 @@ An optional `single_desktop` overrides the number in single-monitor mode:
 Codex uses Desktop 3 alone, and secondary-display Desktop 1 with two monitors.
 Create the required desktops in Mission Control first (this configuration needs
 five). If a target is unavailable or ambiguous, restore exits before writing.
-Restore merges the assignments with existing ones, restarts Dock, then moves
-existing ordinary windows to their assigned desktops and verifies each move.
+Restore merges the assignments with existing ones, writing preferences and
+restarting Dock only when an assignment differs or is missing. It always checks
+existing ordinary windows, moves misplaced ones to their assigned desktops, and
+verifies each move. Assignments for apps absent from the backup are preserved.
 Fullscreen, shared/all-desktop, and unmanaged windows are left in place. Apps
 assigned to All Desktops are not moved. A failed move produces a nonzero exit
 status; the assignment preferences may already have been restored.

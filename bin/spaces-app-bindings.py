@@ -205,12 +205,16 @@ def main():
         if not resolved:
             return
         # Merge so apps absent from the backup keep their current assignments.
-        merged = dict(preferences.get('app-bindings', {}), **resolved)
-        command = ['/usr/bin/defaults', 'write', 'com.apple.spaces', 'app-bindings', '-dict']
-        for app, uuid in sorted(merged.items()):
-            command.extend([app, uuid])
-        subprocess.run(command, check=True)
-        subprocess.run(['/usr/bin/killall', 'Dock'], check=False)
+        current = preferences.get('app-bindings', {})
+        merged = dict(current, **resolved)
+        if merged != current:
+            command = ['/usr/bin/defaults', 'write', 'com.apple.spaces', 'app-bindings', '-dict']
+            for app, uuid in sorted(merged.items()):
+                command.extend([app, uuid])
+            subprocess.run(command, check=True)
+            subprocess.run(['/usr/bin/killall', 'Dock'], check=False)
+        else:
+            print('Assignments already match; skipping preference write and Dock restart.')
         move_windows(roles, resolved)
     except (AttributeError, ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as error:
         parser.exit(1, f'{error}\n')

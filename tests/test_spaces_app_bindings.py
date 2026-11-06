@@ -81,6 +81,38 @@ class AssignmentsTest(unittest.TestCase):
                              dict(bindings.resolve(self.single, self.apps), unrelated='keep'))
             self.assertEqual(run.call_args_list[1].args[0], ['/usr/bin/killall', 'Dock'])
 
+    def test_matching_assignments_skip_write_but_still_move_windows(self):
+        for roles in (self.single, self.dual):
+            with self.subTest(roles=roles), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / 'apps.json'
+                path.write_text(json.dumps(self.apps))
+                current = dict(bindings.resolve(roles, self.apps), unrelated='keep')
+                run = self.run_main(['restore'], roles, path, {'app-bindings': current})
+                run.assert_not_called()
+
+    def test_missing_empty_uuid_is_not_already_assigned(self):
+        self.laptop['Spaces'][0]['uuid'] = ''
+        apps = {'terminal': {'display': 'main', 'desktop': 1}}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'apps.json'
+            path.write_text(json.dumps(apps))
+            run = self.run_main(['restore'], self.single, path, {'app-bindings': {}})
+            self.assertEqual(run.call_count, 2)
+            self.assertEqual(run.call_args_list[0].args[0][-2:], ['terminal', ''])
+            run = self.run_main(['restore'], self.single, path,
+                                {'app-bindings': {'terminal': ''}})
+            run.assert_not_called()
+
+    def test_changed_assignment_still_writes_and_restarts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'apps.json'
+            path.write_text(json.dumps(self.apps))
+            current = bindings.resolve(self.single, self.apps)
+            current['browser'] = 'wrong-space'
+            run = self.run_main(['restore'], self.single, path, {'app-bindings': current})
+            self.assertEqual(run.call_count, 2)
+            self.assertEqual(run.call_args_list[1].args[0], ['/usr/bin/killall', 'Dock'])
+
     def test_dry_run_plans_window_moves_without_writing(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'apps.json'
