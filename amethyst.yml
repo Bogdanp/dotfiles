@@ -183,6 +183,9 @@ floating:
   - com.apple.systempreferences
   - com.kapeli.dashdoc
   - io.defn.Franz
+  - id: "*"
+    window-titles:
+      - "^Android Emulator - "
 
 screen-padding-bottom: 10
 screen-padding-left: 10
